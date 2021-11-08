@@ -1,12 +1,14 @@
 // NoelV11 - Noel Varghese
-This ruleset will be updated frequently
-d frequently
+
+C and C++ Merged Ruleset
+
+This ruleset will be updated frequently 
 
 C-Ruleset = {"gets|_getts":
     (normal, 5, "Does not check for buffer overflows (CWE-120, CWE-20)",
      "Use fgets() or get_s instead", "buffer", "", {'input': 1}),
 
-"sizeof(sizeof())": "Indicates the presence of bugs,if the size of the input is not accounted for","Use sizeof()", "buffer", ""  , {'input': 1}),
+"sizeof(sizeof())": "Indicates the presence of bugs,if the size of the input is not accounted for.Highlighted in CWE 789","Use sizeof()", "buffer", ""  , {'input': 1}),
 
 "return"  :  
 In case memory that is allocated is not freed at the end of the program,then it raises a chance of Memory Leak,"Use free", "buffer", ""  , {'input': 1}),
@@ -15,7 +17,7 @@ In case memory that is allocated is not freed at the end of the program,then it 
 
 "qsort"  :  "Usage of this insecure function will place unknown demands on stack resources and undefined behaviour from the initialized stack","Use qsort_s ", "buffer", ""  , {'input': 1}),
 
-"atof"  :  
+"atol"  :  
 "It is a function, that converts strings to numbers, and has undefined behavior when the strings cannot be converted, and should therefore be avoided.","Use strtol", "buffer", ""  , {'input': 1}),
 
 
@@ -30,53 +32,53 @@ In case memory that is allocated is not freed at the end of the program,then it 
 
 
 "notnull"  :  
-"It is a function, that converts strings to numbers, and has undefined behavior when the strings cannot be converted, and should therefore be avoided.","Do not assign non zero values to notnull function", "buffer", ""  , {'input': 1}),
+"It is a function, that converts strings to numbers, and has undefined behavior when the strings cannot be converted, and should therefore be avoided.Highlighted in CWE-252 and CWE-170","Do not assign non zero values to notnull function", "buffer", ""  , {'input': 1}),
 
 
 
 "fopen"  :  
-"This insecure function can cause Resource Exhaustion,if resources are not released after use .","Use fclose", "buffer", ""  , {'input': 1}),
+"This insecure function can cause Resource Exhaustion,if resources are not released after use.Highlighted in CWE-377","Use fclose", "buffer", ""  , {'input': 1}),
 
 
 
 "sprintf"  :  
-"It is a function, that converts strings to numbers, and has undefined behavior when the strings cannot be converted, and should therefore be avoided.","Use snprintf", "buffer", ""  , {'input': 1}),
+"It is a function, that converts strings to numbers, and has undefined behavior when the strings cannot be converted, and should therefore be avoided.Highlighted in CWE-676","Use snprintf", "buffer", ""  , {'input': 1}),
 
 
 
 "rand"  :  
-"When software generates predictable values in a context requiring unpredictability, it may be possible for an attacker to guess the next value that will be generated, and use this guess to impersonate another user or access sensitive information..","Use randombytes_uniform", "buffer", ""  , {'input': 1}),
+"When software generates predictable values in a context requiring unpredictability, it may be possible for an attacker to guess the next value that will be generated, and use this guess to impersonate another user or access sensitive information.Highlighted in CWE-330 and CWE-338","Use randombytes_uniform", "buffer", ""  , {'input': 1}),
 
-"strncpy"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use strncpy_s", "buffer", ""  , {'input': 1}),
-
-
-"wscnpy"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use wcsncpy_s", "buffer", ""  , {'input': 1}),
-
-"wscncat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use wcscat_s", "buffer", ""  , {'input': 1}),
-
-"strncat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use strncat_s", "buffer", ""  , {'input': 1}),
-
-"strncat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use strncat_s", "buffer", ""  , {'input': 1}),
-
-"wcscat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use wcscat_s ", "buffer", ""  , {'input': 1}),
-
-"strcat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use strcat_s ", "buffer", ""  , {'input': 1}),
+"strncpy"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use strncpy_s", "buffer", ""  , {'input': 1}),
 
 
-"wcslen"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use wcslen_s ", "buffer", ""  , {'input': 1}),
+"wscnpy"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use wcsncpy_s", "buffer", ""  , {'input': 1}),
+
+"wscncat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120Highlighted in CWE-120","Use wcscat_s", "buffer", ""  , {'input': 1}),
+
+"strncat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use strncat_s", "buffer", ""  , {'input': 1}),
+
+"strncat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use strncat_s", "buffer", ""  , {'input': 1}),
+
+"wcscat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use wcscat_s ", "buffer", ""  , {'input': 1}),
+
+"strcat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use strcat_s ", "buffer", ""  , {'input': 1}),
 
 
-"strlen"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use strlen_s ", "buffer", ""  , {'input': 1}),
-
-"wcscpy"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use wcscpy_s ", "buffer", ""  , {'input': 1}),
-
-"strcpy"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use strcpy_s ", "buffer", ""  , {'input': 1}),
+"wcslen"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use wcslen_s ", "buffer", ""  , {'input': 1}),
 
 
-"wscncat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use wscncat_s ", "buffer", ""  , {'input': 1}),
+"strlen"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use strlen_s ", "buffer", ""  , {'input': 1}),
+
+"wcscpy"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use wcscpy_s ", "buffer", ""  , {'input': 1}),
+
+"strcpy"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use strcpy_s ", "buffer", ""  , {'input': 1}),
+
+
+"wscncat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use wscncat_s ", "buffer", ""  , {'input': 1}),
 
 "abort"  :  "It has implementation-defined behaviors such as destroying of initialized variables and threads, and should therefore be avoided","Use _exit ", "buffer", ""  , {'input': 1}),
 
 "exit"  :  "It has implementation-defined behaviors such as destroying of initialized variables and threads, and should therefore be avoided","Use _exit ", "buffer", ""  , {'input': 1}),
 
-"system"  :  "It has implementation-defined behaviors such as destroying of initialized variables and threads, and should therefore be avoided","Use execve ", "buffer", ""  , {'input': 1}),
+"system"  :  "It has implementation-defined behaviors such as destroying of initialized variables and threads, and should therefore be avoided.Highlighted in CWE-676","Use execve ", "buffer", ""  , {'input': 1}),

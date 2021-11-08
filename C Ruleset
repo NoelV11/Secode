@@ -1,14 +1,12 @@
-// NoelV11 - Noel Varghese
+C and C++ Insecure functions merged ruleset
+This ruleset will be updated frequently
 
-C and C++ Merged Ruleset
-
-This ruleset will be updated frequently 
 
 C-Ruleset = {"gets|_getts":
     (normal, 5, "Does not check for buffer overflows (CWE-120, CWE-20)",
      "Use fgets() or get_s instead", "buffer", "", {'input': 1}),
 
-"sizeof(sizeof())": "Indicates the presence of bugs,if the size of the input is not accounted for.Highlighted in CWE 789","Use sizeof()", "buffer", ""  , {'input': 1}),
+"sizeof(sizeof())": "Indicates the presence of bugs,if the size of the input is not accounted for","Use sizeof()", "buffer", ""  , {'input': 1}),
 
 "return"  :  
 In case memory that is allocated is not freed at the end of the program,then it raises a chance of Memory Leak,"Use free", "buffer", ""  , {'input': 1}),
@@ -17,7 +15,7 @@ In case memory that is allocated is not freed at the end of the program,then it 
 
 "qsort"  :  "Usage of this insecure function will place unknown demands on stack resources and undefined behaviour from the initialized stack","Use qsort_s ", "buffer", ""  , {'input': 1}),
 
-"atol"  :  
+"atof"  :  
 "It is a function, that converts strings to numbers, and has undefined behavior when the strings cannot be converted, and should therefore be avoided.","Use strtol", "buffer", ""  , {'input': 1}),
 
 
@@ -32,56 +30,105 @@ In case memory that is allocated is not freed at the end of the program,then it 
 
 
 "notnull"  :  
-"It is a function, that converts strings to numbers, and has undefined behavior when the strings cannot be converted, and should therefore be avoided.Highlighted in CWE-252 and CWE-170","Do not assign non zero values to notnull function", "buffer", ""  , {'input': 1}),
+"It is a function, that converts strings to numbers, and has undefined behavior when the strings cannot be converted, and should therefore be avoided.","Do not assign non zero values to notnull function", "buffer", ""  , {'input': 1}),
 
 
 
 "fopen"  :  
-"This insecure function can cause Resource Exhaustion,if resources are not released after use.Highlighted in CWE-377","Use fclose", "buffer", ""  , {'input': 1}),
+"This insecure function can cause Resource Exhaustion,if resources are not released after use .","Use fclose", "buffer", ""  , {'input': 1}),
 
 
 
-"sprintf"  :  
-"It is a function, that converts strings to numbers, and has undefined behavior when the strings cannot be converted, and should therefore be avoided.Highlighted in CWE-676","Use snprintf", "buffer", ""  , {'input': 1}),
-
+"sprintf | _snwprintf | _snprintf | _sntprintf | nsprintf"  :  
+"It is a function, that converts strings to numbers, and has undefined behavior when the strings cannot be converted, and should therefore be avoided.","Use snprintf", "buffer", ""  , {'input': 1}),
 
 
 "rand"  :  
-"When software generates predictable values in a context requiring unpredictability, it may be possible for an attacker to guess the next value that will be generated, and use this guess to impersonate another user or access sensitive information.Highlighted in CWE-330 and CWE-338","Use randombytes_uniform", "buffer", ""  , {'input': 1}),
+"When software generates predictable values in a context requiring unpredictability, it may be possible for an attacker to guess the next value that will be generated, and use this guess to impersonate another user or access sensitive information..","Use randombytes_uniform", "buffer", ""  , {'input': 1}),
 
-"strncpy"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use strncpy_s", "buffer", ""  , {'input': 1}),
-
-
-"wscnpy"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use wcsncpy_s", "buffer", ""  , {'input': 1}),
-
-"wscncat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120Highlighted in CWE-120","Use wcscat_s", "buffer", ""  , {'input': 1}),
-
-"strncat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use strncat_s", "buffer", ""  , {'input': 1}),
-
-"strncat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use strncat_s", "buffer", ""  , {'input': 1}),
-
-"wcscat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use wcscat_s ", "buffer", ""  , {'input': 1}),
-
-"strcat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use strcat_s ", "buffer", ""  , {'input': 1}),
+"strncpy"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use strncpy_s", "buffer", ""  , {'input': 1}),
 
 
-"wcslen"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use wcslen_s ", "buffer", ""  , {'input': 1}),
+"wscnpy"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use wcsncpy_s", "buffer", ""  , {'input': 1}),
+
+"wscncat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use wcscat_s", "buffer", ""  , {'input': 1}),
+
+"strncat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use strncat_s", "buffer", ""  , {'input': 1}),
+
+"wcscat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use wcscat_s ", "buffer", ""  , {'input': 1}),
+
+"strcat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use strcat_s ", "buffer", ""  , {'input': 1}),
 
 
-"strlen"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use strlen_s ", "buffer", ""  , {'input': 1}),
-
-"wcscpy"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use wcscpy_s ", "buffer", ""  , {'input': 1}),
-
-"strcpy"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use strcpy_s ", "buffer", ""  , {'input': 1}),
+"wcslen"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use wcslen_s ", "buffer", ""  , {'input': 1}),
 
 
-"wscncat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.Highlighted in CWE-120","Use wscncat_s ", "buffer", ""  , {'input': 1}),
+"strlen | wcslen | _mbslen |  _mbstrlen |  StrLen|  lstrlen"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use strlen_s ", "buffer", ""  , {'input': 1}),
+
+"wcscpy"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use wcscpy_s ", "buffer", ""  , {'input': 1}),
+
+"_itoa | _i64toa | _ui64toa | _ultoa "  :  "These functions can be exploited to bypass security controls in order to execute malicious code or cause a system crash.","Use_itoa_s, "buffer", ""  , {'input': 1}),
+
+"_itow | _i64tow |  _ui64tot | _ui64tow | _ultot | _ultow"  :  "These functions can be exploited to bypass security controls in order to execute malicious code or cause a system crash.","Use_itow_s, "buffer", ""  , {'input': 1}),
+
+"snscanf | snwscanf | _sntscanf  |  wscanf | _tscanf | sscanf | swscanf | _stscanf"  :  "Usage of these input functions does not ensure data sanitization or check of it's length","Use _sscanf_s ", "buffer", ""  , {'input': 1}),
+
+"strcpy"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use strcpy_s ", "buffer", ""  , {'input': 1}),
+
+"strcpy"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use strcpy_s ", "buffer", ""  , {'input': 1}),
+
+
+"wscncat"  :  "Error can lead to a security vulnerability, for instance, giving access to sensitive data or allowing arbitrary code execution.","Use wscncat_s ", "buffer", ""  , {'input': 1}),
 
 "abort"  :  "It has implementation-defined behaviors such as destroying of initialized variables and threads, and should therefore be avoided","Use _exit ", "buffer", ""  , {'input': 1}),
 
 "exit"  :  "It has implementation-defined behaviors such as destroying of initialized variables and threads, and should therefore be avoided","Use _exit ", "buffer", ""  , {'input': 1}),
 
-"system"  :  "It has implementation-defined behaviors such as destroying of initialized variables and threads, and should therefore be avoided.Highlighted in CWE-676","Use execve ", "buffer", ""  , {'input': 1}),
+"system"  :  "It has implementation-defined behaviors such as destroying of initialized variables and threads, and should therefore be avoided","Use execve ", "buffer", ""  , {'input': 1}),
+
+"strcpy | stpcpy":
+    (c_buffer, 4,
+     "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
+     "Consider using snprintf, strcpy_s, or strlcpy (warning: strncpy easily misused)",
+     "buffer", "", {}),
+
+"strcat"  :  "It's usage causes an instance of Arbitary Code Execution,leading to a Buffer Overflow","Use strncat ", "buffer", ""  , {'input': 1}),
+
+"strcmp"  :  "It's usage causes a string to truncate,leading to a Buffer Overflow attack","Use strncmp ", "buffer", ""  , {'input': 1}),
+
+"_vsnprintf | _vsnwprintf | _vsntprintf | wvnsprintf | wvnsprintfA | wvnsprintfW"  :  "It's usage can lead to Buffer Overflow vulnerability","Use vsntprintf_s ", "buffer", ""  , {'input': 1}),
+
+"wvsprintf | wvsprintfA | wvsprintfW | vsprintf | _vstprintf | vswprintf"  :  "It's usage can lead to Buffer Overflow vulnerability and unexpected program errors ","Use _vstprintf_s ", "buffer", ""  , {'input': 1}),
+
+"fprintf | snprintf"  :  "It's usage can lead to vulnerabilities,such as Information Leakage and Mmeory Overwriting","Use fgets ", "buffer", ""  , {'input': 1}),
+
+"cftime"  :  "No bounds checking","Use strftime ", "buffer", ""  , {'buf',sizeof(buf),fmt,&tm: 4}),
+
+"chdir"  :  "Race Conditions take place using this function and can cause unexpected behaviours","Use fchdir ", "buffer", ""  , {'input': 1}),
+
+"chmod"  :  "It causes race conditions","Use fchmod ", "buffer", ""  , {'input': 1}),
+
+"strcmp"  :  "It's usage causes a string to truncate,leading to a Buffer Overflow attack","Use strncmp ", "buffer", ""  , {'input': 1}),
+
+"wordexp"  :  "It is vulnerable to Shell Code Injection","Use glob ", "buffer", ""  , {'input': 1}),
+
+"tempnam"  :  "Race Conditions occur with usage of this insecure function","Use mkstem ", "buffer", ""  , {'input': 1}),
+
+"mktemp"  :  "Though this function helps us to create a temperory file,it causes race conditions","Use mkstemp ", "buffer", ""  , {'input': 1}),
+
+"lscat | stat | fstatat "  :  "Though this function helps us to create files,but in turn is vulnerable to race conditions","Use mkstemp ", "buffer", ""  , {'input': 1}),
+
+"getpass ":"It is deemed insecure,for handling passwords,as it intakes only the first 8 characters of a password","Use getpassphrase ", "buffer", ""  , {'input': 1}),
+
+"lscat | stat | fstatat "  : "Too dangerous to use in libraries or privileged commands and daemons because they find the executable by searching the directories in the PATH environment variable, which is under the complete control of the user. They should be avoided for most other programs.","Use execl , execv or execve ", "buffer", ""  , {'input': 1}),
+
+"dup ":"Memory leakage ","Use fcntl", "buffer", ""  , {'input': 1}),
+
+"getpass ":"It is deemed insecure,for handling passwords,as it intakes only the first 8 characters of a password","Use getpassphrase ", "buffer", ""  , {'input': 1}),
+
+"malloc ":"By using malloc(),an attacker may be able to create a situation where the computed buffer size is less than the data to be placed in it.","Use talloc ", "buffer", ""  , {'input': 1}),
+
+"scanf | fscanf ":"There is no limit to the length of data,that can be input to the function","Use scanf("%[max array size-1]s,variable", "buffer", ""  , {'input': 1}),
 
 "memset |memcpy | memove | CopyMemory |  RtlCopyMemory "  :  "memset() function when called,will be removed by the compiler. The buffer is no longer used after the memset() call. And the compiler removes the function call for the sake of optimization.Highlighted in CWE-788 and CWE-805","Use calloc or memcpy_s ", "buffer", ""  , {'input': 1}),
 
@@ -89,3 +136,12 @@ In case memory that is allocated is not freed at the end of the program,then it 
 
 "wmemcpy | "  :"This insecure function copies objects from on-heap to off-heap.Highlighted in CWE 120 and 121","Use wmemcpy_s ", "buffer", ""  , {'input': 1}),
 
+"_splitpath, | tsplitpath, | _ splitpath" :  "Usage of these input functions does not ensure data sanitization or check of it's length","Use _sscanf_s ​", "buffer", ""  , {'input': 1}),_itow_s
+
+"_splitpath, | tsplitpath, | _ splitpath" :  "Split path function succeeds in breaking a file path into components,but presents a Buffer Overrun vulnerability ","Use _splitpath_s ​", "buffer", ""  , {'input': 1}),
+
+"makepath |  _tmakepath | _makepath |  _wmakepath" :  "Makepath creates a composite path string from individual components and is vulnerable to file manipulation attack instance .Highlighted in CWE-26 and CWE-367","Use _makepath_s ​", "buffer", ""  , {'input': 1}),
+
+"strtok | _tcstok | wcstok | _mbstok" :  "This insecure function is vulnerable to Buffer Overflow.Highlighted in CWE-741","Use strtok_s ​", "buffer", ""  , {'input': 1}),
+
+"_tcsncat | _mbsncat | _mbsnbcat | StrCatN | StrCatNA | StrCatNW | StrNCat | StrNCatA | StrNCatW | lstrncat | lstrcatnA | lstrcatnW | lstrcatn | _fstrncat.Highlighted in CWE-120 and CWE-193" :  "This insecure function is vulnerable to Buffer Overflow","Use strncat_s ​", "buffer", ""  , {'input': 1}),

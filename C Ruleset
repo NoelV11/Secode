@@ -82,3 +82,10 @@ In case memory that is allocated is not freed at the end of the program,then it 
 "exit"  :  "It has implementation-defined behaviors such as destroying of initialized variables and threads, and should therefore be avoided","Use _exit ", "buffer", ""  , {'input': 1}),
 
 "system"  :  "It has implementation-defined behaviors such as destroying of initialized variables and threads, and should therefore be avoided.Highlighted in CWE-676","Use execve ", "buffer", ""  , {'input': 1}),
+
+"memset |memcpy | memove | CopyMemory |  RtlCopyMemory "  :  "memset() function when called,will be removed by the compiler. The buffer is no longer used after the memset() call. And the compiler removes the function call for the sake of optimization.Highlighted in CWE-788 and CWE-805","Use calloc or memcpy_s ", "buffer", ""  , {'input': 1}),
+
+"CopyMemory"  :"This insecure function copies objects from on-heap to off-heap.Highlighted in CWE 120 and 121","Use memcpy_s ", "buffer", ""  , {'input': 1}),
+
+"wmemcpy | "  :"This insecure function copies objects from on-heap to off-heap.Highlighted in CWE 120 and 121","Use wmemcpy_s ", "buffer", ""  , {'input': 1}),
+

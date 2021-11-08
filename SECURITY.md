@@ -2,9 +2,9 @@
 
 ## Supported Versions
 
-this section is to tell people about which versions 
-of the project are
-currently being supported with security updates.
+this section is to tell which versions 
+of the project are currently being supported 
+with security updates.
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -12,6 +12,8 @@ currently being supported with security updates.
 
 ## Reporting a Vulnerability
 
-this section to tell people how to report a vulnerability.
+this section to tell people how to report a 
+vulnerability.
 
-Create an issue, to report bugs or any security limitations on the tool
+Create an issue, to report bugs or any security 
+limitations on the tool.

@@ -1,5 +1,5 @@
-# C and C++ Insecure functions merged ruleset
-## This ruleset will be updated frequently
+// C and C++ Insecure functions merged ruleset
+// This ruleset will be updated frequently
 
 C-Ruleset = {"gets|_getts":
 (normal, 5, "Does not check for buffer overflows (CWE-120, CWE-20)",

@@ -500,5 +500,11 @@ In case memory that is allocated is not freed at the end of the program,then it 
      "",
      "tmpfile", "avoid-race", {}),
      
-     
+      "syslog":
+    (c_printf, 4,
+     "If syslog's format strings can be influenced by an attacker, "
+     "they can be exploited (CWE-134)",
+     "Use a constant format string for syslog",
+     "format", "", {'format_position': 2}),
+
 

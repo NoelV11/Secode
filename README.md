@@ -1,3 +1,3 @@
 # Secode
-Detecting Insecure Coding and making your code 
+Detecting Insecure Code and making your code
 Secure!

@@ -1,5 +1,7 @@
-// C Insecure functions ruleset
-// This ruleset will be updated frequently
+// Ruleset
+// This ruleset is updated frequently
+
+//For Programming Language: C
 
 C-Ruleset = {"gets|_getts":
 (normal, 5, "Does not check for buffer overflows (CWE-120, CWE-20)",

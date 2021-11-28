@@ -15,7 +15,7 @@ SeCode enforces the concept of 'Secure Coding', an often overlooked topic, durin
 - Vulnerability at hand
 - CWE Number associated with it
 - A brief description about the vulnerability
-- Alternative function that you can use - which is totally safe from exploits
+- Alternative function that you can use - which is totally safe from exploits OR a precautionary measure/practice that can be performed,to prevent exploitation of code
 
 ## What do we aspire to do with this project?
 

@@ -16,3 +16,8 @@ SeCode enforces the concept of 'Secure Coding', an often overlooked topic, durin
 - CWE Number associated with it
 - A brief description about the vulnerability
 - Alternative function that you can use - which is totally safe from exploits
+
+## What do we aspire to do with this project?
+
+- Dockerize this tool, to provide support across all platforms
+- Extend functionalities within the tool - such as Web Code scanning (languages - JSON,HTML and PHP) and Application Code scanning (Kotlin)

@@ -1,7 +1,7 @@
 // Ruleset
 // This ruleset is updated frequently
 
-//For Programming Language: C
+//Stringent and comprehensive ruleset,for C programming language
 
 C-Ruleset = {"gets|_getts":
 (normal, 5, "Does not check for buffer overflows (CWE-120, CWE-20)",
@@ -508,5 +508,82 @@ In case memory that is allocated is not freed at the end of the program,then it 
      "they can be exploited (CWE-134)",
      "Use a constant format string for syslog",
      "format", "", {'format_position': 2}),
+     
+     "access":     
+    (normal, 4,
+     "This usually indicates a security flaw.  If an "
+     "attacker can change anything along the path between the "
+     "call to access() and the file's actual use (e.g., by moving "
+     "files), the attacker can exploit the race condition (CWE-362/CWE-367!)",
+     "Set up the correct permissions (e.g., using setuid()) and "
+     "try to open the file directly",
+     "race",
+     "avoid-race#atomic-filesystem", {}),
+     
+    "getchar|fgetc|getc|read|_gettc":
+    (normal, 1,
+     "Check buffer boundaries if used in a loop including recursive loops (CWE-120, CWE-20)",
+     "",
+     "buffer", "dangers-c", {'input': 1}),
+     
+         "getwd":
+    (normal, 3,
+     "This does not protect against buffer overflows "
+     "by itself, so use with caution (CWE-120, CWE-20)",
+     "Use getcwd instead",
+     "buffer", "dangers-c", {'input': 1}),
+     
+       "getopt|getopt_long":
+    (normal, 3,
+     "Some older implementations do not protect against internal buffer overflows (CWE-120, CWE-20)",
+     "Check implementation on installation, or limit the size of all string inputs",
+     "buffer", "dangers-c", {'input': 1}),
+     
+    "realpath":
+    (normal, 3,
+     "This function does not protect against buffer overflows, "
+     "and some implementations can overflow internally (CWE-120/CWE-785!)",
+     "Ensure that the destination buffer is at least of size MAXPATHLEN, and"
+     "to protect against implementation problems, the input argument "
+     "should also be checked to ensure it is no larger than MAXPATHLEN",
+     "buffer", "dangers-c", {}),
+     
+      "strtrns":
+    (normal, 3,
+     "This function does not protect against buffer overflows (CWE-120)",
+     "Ensure that destination is at least as long as the source",
+     "buffer", "dangers-c", {}),
+     "streadd|strecpy":
+    (normal, 4,
+     "This function does not protect against buffer overflows (CWE-120)",
+     "Ensure the destination has 4 times the size of the source, to leave room for expansion",
+     "buffer", "dangers-c", {}),
+
+"wcslen|_tcslen|_mbslen":
+    (normal,
+     # Often this isn't really a risk, and even when it is, at worst it
+     # often causes a program crash (and nothing worse).
+     1,
+     "Does not handle strings that are not \\0-terminated; "
+     "if given one it may perform an over-read (it could cause a crash "
+     "if unprotected) (CWE-126)",
+     "",
+     "buffer", "", {}),
+     
+      "fscanf|sscanf|vsscanf|vfscanf|_ftscanf|fwscanf|vfwscanf|vswscanf":
+    (c_scanf, 4,
+     "The scanf() family's %s operation, without a limit specification, "
+     "permits buffer overflows (CWE-120, CWE-20)",
+     "Specify a limit to %s, or use a different input function",
+     "buffer", "", {'input': 1, 'format_position': 2}),
+     
+     
+     
+     
+     
+     
+     
+     
+     
 
 

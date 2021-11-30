@@ -21,7 +21,7 @@ int main()
                  C_ruleset();
                     break;
               case '2':exit(0);
-              default :cout<<"Wrong Option";
+              default: cout<<"Wrong Option";
         }
         }while(ch!='2');
 }

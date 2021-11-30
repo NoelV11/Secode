@@ -12,6 +12,8 @@ int main()
     
     // Invoking IntroSreen.cpp 
     intro();
+    
+    // Creating a do-while loop to eiher select option 1 or 2
     do
         {
             clrscr();
@@ -36,5 +38,7 @@ int main()
             }
 
             }
+    
+    // if option 1 is not selected than option 2 is envoked
     while(ch!='2');
 }

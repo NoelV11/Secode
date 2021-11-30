@@ -18,12 +18,12 @@ Secode is a App (or tool), that analyzes your code, to find Anomalies in your co
 - CWE Number associated with it
 - A brief description about the vulnerability
 - Alternative function that you can use, like 
-1. which are totally safe from exploits OR 
-2. A precautionary measure/ Practice that can be performed, to prevent exploitation of code.
+     1. which are totally safe from exploits  
+     2. A precautionary measure/ Practice that can be performed, to prevent exploitation of code.
 
 ## Roadmap
 
 - Dockerize this tool, to provide support across all platforms
 - Extend functionalities within the tool, such as 
-  1.Web Code scanning of languages like JSON, HTML and PHP and 
-  2.Application Code scanning like Java and Kotlin.
+    1. Web Code scanning of languages like JSON, HTML and PHP and 
+    2. Application Code scanning like Java and Kotlin.

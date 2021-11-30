@@ -1,7 +1,8 @@
-// Ruleset
-// This ruleset wiil be updated frequently
-
-//Stringent and comprehensive ruleset, for C programming language
+/*
+   Stringent and comprehensive ruleset, for C/C++ programming language
+   
+    !!! This ruleset wiil be updated frequently !!!
+*/
 
 C-Ruleset = {"gets|_getts":
 (normal, 5, "Does not check for buffer overflows (CWE-120, CWE-20)",

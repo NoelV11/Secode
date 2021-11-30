@@ -1,23 +1,29 @@
-# Secode
-Detecting Insecure Code and making your code
-Secure!
+# Secode: Insecure Code Detector
+"Detecting Insecure Code and making your code Secure!"
 
 ## Description
 
-SeCode is a CLI-based tool, that analyzes your C code, to find anomalies (insecure functions), that make your make your code insecure. As a precautionary measure, it will provide you with safer function alternatives, that you can implement on your code, to make it less exploitable.
+Secode is a App (or tool), that analyzes your code, to find Anomalies in your codes like insecure functions, that make your make your code insecure. 
 
-SeCode is powered by a stringent and comprehensive ruleset, that can detect vulnerabilities pretty easily. Please understand that the ruleset will be updated regularly,as more vulnerabilities and exploits emerge, with use of insecure functions
+### As a precautionary measure, it will provide you with safer function alternatives, that you can implement on your code, to make it less exploitable.
 
-SeCode enforces the concept of 'Secure Coding', an often overlooked topic, during the development process of any software 
+## How is it Different
+- SeCode is powered by a stringent and comprehensive ruleset, that can detect vulnerabilities pretty easily. Please understand that the ruleset will be updated regularly, as more vulnerabilities and exploits emerge, with use of say for example, insecure functions
 
-## What does a SeCode scan on the submitted code provide?
+- Secode enforces the concept of 'Secure Coding', an often overlooked topic, during the development process of any software.
+
+## What Does A SeCode Scan on The Submitted Code You Provide?
 
 - Vulnerability at hand
 - CWE Number associated with it
 - A brief description about the vulnerability
-- Alternative function that you can use - which is totally safe from exploits OR a precautionary measure/practice that can be performed,to prevent exploitation of code
+- Alternative function that you can use, like 
+1. which are totally safe from exploits OR 
+2. A precautionary measure/ Practice that can be performed, to prevent exploitation of code.
 
-## What do we aspire to do with this project?
+## Roadmap
 
 - Dockerize this tool, to provide support across all platforms
-- Extend functionalities within the tool - such as Web Code scanning (languages - JSON,HTML and PHP) and Application Code scanning (Kotlin)
+- Extend functionalities within the tool, such as 
+  1.Web Code scanning of languages like JSON, HTML and PHP and 
+  2.Application Code scanning like Java and Kotlin.

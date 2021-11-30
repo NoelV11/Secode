@@ -24,4 +24,6 @@
 - Dockerize this tool, to provide support across all platforms
 - Extend functionalities within the tool, such as 
     1. Web Code scanning of languages like JSON, HTML and PHP and 
-    2. Application Code scanning like Java and Kotlin.
+    2. Application Code scanning like Java and Kotlin
+- GitHub Integration
+- Add to Github Developer Program.

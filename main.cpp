@@ -1,10 +1,9 @@
 // main function of Secode
 header.h
-intro.cpp
 admin_menu.cpp
     
 
-void main()
+int main()
 {
     char ch;
     intro();
@@ -12,23 +11,17 @@ void main()
     {
         clrscr();
         cout<<"\n\n\n\tMAIN MENU";
-        cout<<"\n\n\t01. BOOK ISSUE";
-        cout<<"\n\n\t02. BOOK DEPOSIT";
-          cout<<"\n\n\t03. ADMINISTRATOR MENU";
-          cout<<"\n\n\t04. EXIT";
-          cout<<"\n\n\tPlease Select Your Option (1-4) ";
+        cout<<"\n\n\t01. C Insecure Functions";
+          cout<<"\n\n\t02. EXIT";
+          cout<<"\n\n\tPlease Select Your Option (1-2) ";
           ch=getche();
           switch(ch)
           {
             case '1':clrscr();
-                 book_issue();
+                 C_ruleset();
                     break;
-              case '2':book_deposit();
-                     break;
-              case '3':admin_menu();
-                 break;
-              case '4':exit(0);
-              default :cout<<"\a";
+              case '2':exit(0);
+              default :cout<<"Wrong Option";
         }
-        }while(ch!='4');
+        }while(ch!='2');
 }

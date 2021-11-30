@@ -1,5 +1,6 @@
 int intro()
 {
+    // Cleaning up the screen and memory to avoid any memory leakage or anything like that
     clrscr();
     
     //  Goto lcation 35, 11  

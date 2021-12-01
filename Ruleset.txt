@@ -1,5 +1,5 @@
 /*
-   Stringent and comprehensive ruleset, for C/C++ programming language
+   Stringent and comprehensive ruleset, for C/ C++ programming language
    
     !!! This ruleset wiil be updated frequently !!!
 */

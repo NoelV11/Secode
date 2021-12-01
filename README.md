@@ -10,7 +10,7 @@
 - Secode is powered by a stringent and comprehensive ruleset, that can detect vulnerabilities pretty easily. Please understand that the ruleset will be updated regularly, as more vulnerabilities and exploits emerge, with use of say for example, insecure functions
 - Secode enforces the concept of 'Secure Coding', an often overlooked topic, during the development process of any software.
 
-## What Does A Secode Scan on The Submitted Code You Provide?
+## What Does Secode Scan on The Submitted Code You Provide?
 
 - Vulnerability at hand
 - CWE Number associated with it
@@ -23,6 +23,6 @@
 
 - Dockerize this tool, to provide support across all platforms
 - Extend functionalities within the tool, such as 
-    1. Web Code scanning of languages like JSON, HTML and PHP and 
+    1. Web Code scanning of languages like HTML, CSS, Js and PHP,  and 
     2. Application Code scanning like Java and Kotlin
 - Integration in GitHub Actions workflows.

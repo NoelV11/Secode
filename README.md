@@ -3,12 +3,13 @@
 
 ## Description
 
-- Secode is a App, that analyzes your code, to find Anomalies in your codes like insecure functions, that make your make your code insecure. 
-- As a precautionary measure, it will provide you with safer function alternatives, that you can implement on your code, to make it less exploitable.
+- Secode is a App (or tool), that analyzes your code, to find Anomalies in your codes say Insecure Functions, that makes your code insecure. 
+- But, it doesn't stops there, it as a precautionary measure, provides you with safer function alternatives like for use of strcpy() you must use Secure alternative's like lstrcy(), that you can implement on your code, to make it Safe and Secure.
 
 # How is it Different
 - Secode is powered by a stringent and comprehensive ruleset, that can detect vulnerabilities pretty easily. Please understand that the ruleset will be updated regularly, as more vulnerabilities and exploits emerge, with use of say for example, insecure functions
-- Secode enforces the concept of 'Secure Coding', an often overlooked topic, during the development process of any software.
+- Secode enforces the concept of "Secure Coding" and "Secure Software Devloepment Life Cycle (Secure SDLC)" which is now gaining much needed attention during the development process of any software
+- But, it doesn't stops there, it provides you with safer function alternatives like for use of strcpy() you must use Secure alternative's like lstrcy(), that you can implement on your code, to make it Safe and Secure.
 
 ## What Does Secode Scan on The Submitted Code You Provide?
 
@@ -23,6 +24,6 @@
 
 - Dockerize this tool, to provide support across all platforms
 - Extend functionalities within the tool, such as 
-    1. Web Code scanning of languages like HTML, CSS, Js and PHP,  and 
+    1. Web Code scanning of languages like HTML, CSS, Js and PHP
     2. Application Code scanning like Java and Kotlin
 - Integration in GitHub Actions workflows.

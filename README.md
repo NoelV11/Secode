@@ -16,14 +16,14 @@
 - Vulnerability at hand
 - CWE Number associated with it
 - A brief description about the vulnerability
-- Secure Alternative's that you can use, like 
+- Secure Alternative's that you must use, like 
      1. Which are totally safe from exploits  
      2. A precautionary measure/ Practice that can be performed, to prevent exploitation of code.
 
 ## Roadmap
 
 - Dockerize this tool, to provide support across all platforms
-- Extend functionalities within the tool, such as 
-    1. Web Code scanning of languages like HTML, CSS, Js and PHP
-    2. Application Code scanning like Java and Kotlin
+- Extending Scanning functionalities within the App (or tool), such to 
+    1. Web Technologies like HTML, CSS, Js and PHP
+    2. App Development languages like Java and Kotlin
 - Integration in GitHub Actions workflows.

@@ -1,4 +1,4 @@
-int intro()
+int SplashScreen()
 {
     // Cleaning up the screen and memory to avoid any memory leakage or anything like that
     clrscr();
@@ -15,8 +15,12 @@ int intro()
     gotoxy(35,17);
     cout<<"VIT'B Project Exhibition - 2";
     
-    
+     //  Goto lcation 35, 19
+    gotoxy(35,19);
     cout<<"\n\n Supervised By: Sir Thangavel M";
+    
+    
+    cout<<"\n\n Press any key to continue";
     
     getch();
 }

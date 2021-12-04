@@ -4,7 +4,8 @@
 header.h
 IntroSreen.cpp 
 Options.cpp
-    
+Analyzer.cpp
+
 
 int main()
 {
@@ -25,17 +26,19 @@ int main()
               cout<<"\n\n\t Please Select Your Option (1-2) ";
 
             // getting Options
-              ch=getche();
+              ch= getche();
 
             // Using Switch Case
               switch(ch)
-              {
-                case '1':clrscr();
-                     C_ruleset();
-                        break;
-                  case '2':exit(0);
-                  default: cout<<"Wrong Option";
-            }
+                      {
+                          case '1': clrscr();
+                                    C_ruleset();
+                                    Analyzer();
+                                    break;
+
+                          case '2': exit(0);
+                          default: cout<<"Wrong Option Chosen";
+                    }
 
             }
     

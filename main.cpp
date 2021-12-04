@@ -2,8 +2,7 @@
 
 // Calling Files
 header.h
-IntroSreen.cpp 
-Options.cpp
+SplashScreen.cpp 
 Analyzer.cpp
 
 

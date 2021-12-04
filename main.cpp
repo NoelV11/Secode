@@ -32,7 +32,6 @@ int main()
               switch(ch)
                       {
                           case '1': clrscr();
-                                    C_ruleset();
                                     Analyzer();
                                     break;
 

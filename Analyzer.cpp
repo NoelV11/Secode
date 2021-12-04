@@ -18,8 +18,8 @@ if (line)
    
 
 // scan if .c file 
-  // Here, R_OK, W_OK, and X_OK to check for read permission, write permission, and execute permission respectively.
-if( access( fname, R_OK | W_OK | X_OK ) == 0 ) {
+  // Here, R_OK, W_OK, and X_OK to check for read permission and execute permission respectively.
+if( access( fname, R_OK | X_OK ) == 0 ) {
     // file exists in C
 } else {
     // file doesn't exist in C

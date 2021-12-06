@@ -3,7 +3,7 @@ int SplashScreen()
     // Cleaning up the screen and memory to avoid any memory leakage or anything like that
     clrscr();
 
-    int x, y;     // // gotoxy initialization 
+    int x, y;     // gotoxy initialization 
     gotoxy(x, y); // gotoxy definition 
 
     //  Goto lcation 20, 11

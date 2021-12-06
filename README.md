@@ -16,7 +16,7 @@ development process of any software
 - Vulnerability at hand
 - CWE Number associated with it
 - A brief description about the vulnerability
-- Secure Alternative's that you must use which are totally safe from exploits.
+- Secure alternative(s) that you must use which are totally safe from exploits.
 
 ## Roadmap
 - Dockerize to provide support across all platforms

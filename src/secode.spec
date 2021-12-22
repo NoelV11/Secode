@@ -4,8 +4,6 @@ Version: 2.0.10
 Release: 1%{?dist}
 License: GPLv2+
 Group: Development/Tools
-URL: http://dwheeler.com/flawfinder/
-Source: http://dwheeler.com/flawfinder/%{name}-%{version}.tar.gz
 Requires: python
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)

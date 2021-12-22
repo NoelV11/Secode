@@ -1,7 +1,7 @@
-Flawfinder version 2.0.10, (C) 2001-2019 David A. Wheeler.
+Secode:An Insecure Code Detector
 Number of rules (primarily dangerous function names) in C/C++ ruleset: 223
-Examining test.c
-Examining test2.c
+Examining Vulnerable_5.c
+Examining Vulnerable_7.c
 
 FINAL RESULTS:
 

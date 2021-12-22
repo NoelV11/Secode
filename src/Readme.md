@@ -1,1 +1,0 @@
-compiled source for analyser

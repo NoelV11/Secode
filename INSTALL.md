@@ -129,3 +129,13 @@ into.   It's a simple Python program, just type into a command line:
 ~~~~
 python3 secode.py /path/to/file.c
 ~~~~
+
+## Output Formats supported
+
+- txt
+- PDF and
+- CSV
+
+For example:-
+
+python3 secode.py /path/to/file.c > <nameoffile>.pdf

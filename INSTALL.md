@@ -20,7 +20,28 @@ One advantage for using pip is that you'll generally get the
 *current* released version.
 
 
-## 2. PACKAGE FOR UNIX-LIKE SYSTEM (including Cygwin):
+## 2. DIRECT EXECUTION
+
+You can also simply run the program in the directory you've unpacked it
+into.   It's a simple Python program, just type into a command line:
+
+~~~~
+python3 secode.py /path/to/file.c
+~~~~
+
+## Output Formats supported
+
+- txt
+- PDF and
+- CSV
+
+For example:-
+
+~~~~
+python3 secode.py /path/to/file.c > Results.pdf
+~~~~
+
+## 3.PACKAGE FOR UNIX-LIKE SYSTEM (including Cygwin):
 
 If you use an RPM-based system (e.g., Red Hat) or deb-based system
 (e.g., Debian), you can use their respective RPM or debian installation
@@ -35,8 +56,7 @@ One way to accomplish this is:
 sudo apt install secode
 ~~~~
 
-
-## 3. TARBALL (SOURCE INSTALL)
+## 4. TARBALL (SOURCE INSTALL)
 
 QUICK START:
 The quick way to install flawfinder from the tarball is to
@@ -120,12 +140,3 @@ Not enough?  Here are more detailed step-by-step instructions and options.
     `make prefix=/usr mandir=/usr/local/share/man install`
 
   The installer and uninstaller honor `DESTDIR`.
-
-## 4. DIRECT EXECUTION
-
-You can also simply run the program in the directory you've unpacked it
-into.   It's a simple Python program, just type into a command line:
-
-~~~~
-./secode FILES-OR-DIRECTORY
-~~~~

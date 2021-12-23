@@ -1,6 +1,6 @@
-# Installing flawfinder
+# Installing Secode
 
-You can install flawfinder a number of different ways.
+You can install Secode a number of different ways.
 Choose the approach that's most convenient for you!
 The options (described below) are (1) pip, (2) package for Unix-like system, (3) source install, and (4) run directly.
 
@@ -9,11 +9,11 @@ The options (described below) are (1) pip, (2) package for Unix-like system, (3)
 
 For many, the simple approach is to first install Python
 (2.7 or something reasonable in the 3.X series).
-Then use `pip` to install flawfinder
+Then use `pip` to install Secode
 (this will normally download the package):
 
 ~~~~
-pip install flawfinder
+pip install secode
 ~~~~
 
 One advantage for using pip is that you'll generally get the
@@ -32,7 +32,7 @@ This will work out-of-the-box; it may not be the most recent version.
 One way to accomplish this is:
 
 ~~~~
-sudo apt install flawfinder
+sudo apt install secode
 ~~~~
 
 
@@ -54,14 +54,14 @@ as described below, including prefix= and DESTDIR.
 Not enough?  Here are more detailed step-by-step instructions and options.
 
 * Download the "tarball" and uncompress it.
-  GNU-based systems can run `tar xvzf flawfinder-<version>.tar.gz` to do so,
-  then move into the newly created directory with `cd flawfinder-<version>`
+  GNU-based systems can run `tar xvzf secode-<version>.tar.gz` to do so,
+  then move into the newly created directory with `cd secode-<version>`
   If that doesn't work (e.g., you have an old tar program), use:
-    `gunzip flawfinder-<version>.tar.gz`
-    `tar xvf flawfinder-<version>.tar`
-    `cd flawfinder-<version>`
+    `gunzip secode-<version>.tar.gz`
+    `tar xvf secode-<version>.tar`
+    `cd secode-<version>`
 
-* Decide where you want to put it.  Flawfinder normally installs everything
+* Decide where you want to put it.  secode normally installs everything
   in /usr/local, with the program in /usr/local/bin and the man page in
   /usr/local/share/man/man1, per GNU conventions.  You can override this
   when installing (with "make install") by setting some environment
@@ -109,7 +109,7 @@ Not enough?  Here are more detailed step-by-step instructions and options.
 
   To install in /usr (the program in /usr/bin, the manual in /usr/man):
     `make prefix=/usr install`
-  or alternatively, using the older flawfinder conventions:
+  or alternatively, using the older conventions:
     `make INSTALL_DIR=/usr install`
 
   To install in /usr on Cygwin:
@@ -127,5 +127,5 @@ You can also simply run the program in the directory you've unpacked it
 into.   It's a simple Python program, just type into a command line:
 
 ~~~~
-./flawfinder FILES-OR-DIRECTORY
+./secode FILES-OR-DIRECTORY
 ~~~~

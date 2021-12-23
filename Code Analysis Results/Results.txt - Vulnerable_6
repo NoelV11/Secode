@@ -1,0 +1,276 @@
+secode version x.x.x, (C) 2021
+Number of rules (primarily dangerous function names) in C/C++ ruleset: 223
+Examining Vulnerable_6.c
+
+FINAL RESULTS:
+
+Vulnerable_6.c:1048:  [5] (buffer) gets:
+  Does not check for buffer overflows (CWE-120, CWE-20). Use fgets() instead.
+Vulnerable_6.c:1423:  [5] (buffer) gets:
+  Does not check for buffer overflows (CWE-120, CWE-20). Use fgets() instead.
+Vulnerable_6.c:1426:  [5] (buffer) gets:
+  Does not check for buffer overflows (CWE-120, CWE-20). Use fgets() instead.
+Vulnerable_6.c:1427:  [5] (buffer) gets:
+  Does not check for buffer overflows (CWE-120, CWE-20). Use fgets() instead.
+Vulnerable_6.c:1451:  [5] (buffer) strncat:
+  Easily used incorrectly (e.g., incorrectly computing the correct maximum
+  size to add) [MS-banned] (CWE-120). Consider strcat_s, strlcat, snprintf,
+  or automatically resizing strings. Risk is high; the length parameter
+  appears to be a constant, instead of computing the number of characters
+  left.
+Vulnerable_6.c:1452:  [5] (buffer) _tcsncat:
+  Easily used incorrectly (e.g., incorrectly computing the correct maximum
+  size to add) [MS-banned] (CWE-120). Consider strcat_s, strlcat, or
+  automatically resizing strings. Risk is high; the length parameter appears
+  to be a constant, instead of computing the number of characters left.
+Vulnerable_6.c:1455:  [5] (buffer) MultiByteToWideChar:
+  Requires maximum length in CHARACTERS, not bytes (CWE-120). Risk is high,
+  it appears that the size is given as bytes, but the function requires size
+  as characters.
+Vulnerable_6.c:1457:  [5] (buffer) MultiByteToWideChar:
+  Requires maximum length in CHARACTERS, not bytes (CWE-120). Risk is high,
+  it appears that the size is given as bytes, but the function requires size
+  as characters.
+Vulnerable_6.c:1026:  [4] (format) fprintf:
+  If format strings can be influenced by an attacker, they can be exploited
+  (CWE-134). Use a constant for the format specification.
+Vulnerable_6.c:1028:  [4] (buffer) fscanf:
+  The scanf() family's %s operation, without a limit specification, permits
+  buffer overflows (CWE-120, CWE-20). Specify a limit to %s, or use a
+  different input function. If the scanf format is influenceable by an
+  attacker, it's exploitable.
+Vulnerable_6.c:1030:  [4] (format) printf:
+  If format strings can be influenced by an attacker, they can be exploited
+  (CWE-134). Use a constant for the format specification.
+Vulnerable_6.c:1032:  [4] (buffer) scanf:
+  The scanf() family's %s operation, without a limit specification, permits
+  buffer overflows (CWE-120, CWE-20). Specify a limit to %s, or use a
+  different input function. If the scanf format is influenceable by an
+  attacker, it's exploitable.
+Vulnerable_6.c:1034:  [4] (buffer) sscanf:
+  The scanf() family's %s operation, without a limit specification, permits
+  buffer overflows (CWE-120, CWE-20). Specify a limit to %s, or use a
+  different input function. If the scanf format is influenceable by an
+  attacker, it's exploitable.
+Vulnerable_6.c:1036:  [4] (format) vfprintf:
+  If format strings can be influenced by an attacker, they can be exploited
+  (CWE-134). Use a constant for the format specification.
+Vulnerable_6.c:1038:  [4] (format) vprintf:
+  If format strings can be influenced by an attacker, they can be exploited
+  (CWE-134). Use a constant for the format specification.
+Vulnerable_6.c:1040:  [4] (format) vsprintf:
+  Potential format string problem (CWE-134). Make format string constant.
+Vulnerable_6.c:1074:  [4] (format) sprintf:
+  Potential format string problem (CWE-134). Make format string constant.
+Vulnerable_6.c:1088:  [4] (format) snprintf:
+  If format strings can be influenced by an attacker, they can be exploited,
+  and note that sprintf variations do not always \0-terminate (CWE-134). Use
+  a constant for the format specification.
+Vulnerable_6.c:1090:  [4] (format) vsnprintf:
+  If format strings can be influenced by an attacker, they can be exploited,
+  and note that sprintf variations do not always \0-terminate (CWE-134). Use
+  a constant for the format specification.
+Vulnerable_6.c:1092:  [4] (buffer) vfscanf:
+  The scanf() family's %s operation, without a limit specification, permits
+  buffer overflows (CWE-120, CWE-20). Specify a limit to %s, or use a
+  different input function. If the scanf format is influenceable by an
+  attacker, it's exploitable.
+Vulnerable_6.c:1094:  [4] (buffer) vscanf:
+  The scanf() family's %s operation, without a limit specification, permits
+  buffer overflows (CWE-120, CWE-20). Specify a limit to %s, or use a
+  different input function. If the scanf format is influenceable by an
+  attacker, it's exploitable.
+Vulnerable_6.c:1096:  [4] (buffer) vsscanf:
+  The scanf() family's %s operation, without a limit specification, permits
+  buffer overflows (CWE-120, CWE-20). Specify a limit to %s, or use a
+  different input function. If the scanf format is influenceable by an
+  attacker, it's exploitable.
+Vulnerable_6.c:1152:  [4] (shell) popen:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+Vulnerable_6.c:1412:  [4] (buffer) strcpy:
+  Does not check for buffer overflows when copying to destination [MS-banned]
+  (CWE-120). Consider using snprintf, strcpy_s, or strlcpy (warning: strncpy
+  easily misused).
+Vulnerable_6.c:1415:  [4] (buffer) sprintf:
+  Does not check for buffer overflows (CWE-120). Use sprintf_s, snprintf, or
+  vsnprintf.
+Vulnerable_6.c:1416:  [4] (buffer) sprintf:
+  Does not check for buffer overflows (CWE-120). Use sprintf_s, snprintf, or
+  vsnprintf.
+Vulnerable_6.c:1417:  [4] (format) sprintf:
+  Potential format string problem (CWE-134). Make format string constant.
+Vulnerable_6.c:1418:  [4] (format) printf:
+  If format strings can be influenced by an attacker, they can be exploited
+  (CWE-134). Use a constant for the format specification.
+Vulnerable_6.c:1420:  [4] (buffer) scanf:
+  The scanf() family's %s operation, without a limit specification, permits
+  buffer overflows (CWE-120, CWE-20). Specify a limit to %s, or use a
+  different input function.
+Vulnerable_6.c:1422:  [4] (buffer) scanf:
+  The scanf() family's %s operation, without a limit specification, permits
+  buffer overflows (CWE-120, CWE-20). Specify a limit to %s, or use a
+  different input function.
+Vulnerable_6.c:1433:  [4] (format) syslog:
+  If syslog's format strings can be influenced by an attacker, they can be
+  exploited (CWE-134). Use a constant format string for syslog.
+Vulnerable_6.c:1444:  [4] (buffer) _mbscpy:
+  Does not check for buffer overflows when copying to destination [MS-banned]
+  (CWE-120). Consider using a function version that stops copying at the end
+  of the buffer.
+Vulnerable_6.c:1447:  [4] (buffer) lstrcat:
+  Does not check for buffer overflows when concatenating to destination
+  [MS-banned] (CWE-120).
+Vulnerable_6.c:1017:  [3] (tmpfile) tmpnam:
+  Temporary file race condition (CWE-377).
+Vulnerable_6.c:1019:  [3] (tmpfile) tempnam:
+  Temporary file race condition (CWE-377).
+Vulnerable_6.c:1494:  [3] (buffer) getopt_long:
+  Some older implementations do not protect against internal buffer overflows
+  (CWE-120, CWE-20). Check implementation on installation, or limit the size
+  of all string inputs.
+Vulnerable_6.c:236:  [2] (buffer) char:
+  Statically-sized arrays can be improperly restricted, leading to potential
+  overflows or other issues (CWE-119!/CWE-120). Perform bounds checking, use
+  functions that limit length, or ensure that the size is larger than the
+  maximum possible length.
+Vulnerable_6.c:361:  [2] (buffer) char:
+  Statically-sized arrays can be improperly restricted, leading to potential
+  overflows or other issues (CWE-119!/CWE-120). Perform bounds checking, use
+  functions that limit length, or ensure that the size is larger than the
+  maximum possible length.
+Vulnerable_6.c:362:  [2] (buffer) char:
+  Statically-sized arrays can be improperly restricted, leading to potential
+  overflows or other issues (CWE-119!/CWE-120). Perform bounds checking, use
+  functions that limit length, or ensure that the size is larger than the
+  maximum possible length.
+Vulnerable_6.c:410:  [2] (buffer) char:
+  Statically-sized arrays can be improperly restricted, leading to potential
+  overflows or other issues (CWE-119!/CWE-120). Perform bounds checking, use
+  functions that limit length, or ensure that the size is larger than the
+  maximum possible length.
+Vulnerable_6.c:411:  [2] (buffer) char:
+  Statically-sized arrays can be improperly restricted, leading to potential
+  overflows or other issues (CWE-119!/CWE-120). Perform bounds checking, use
+  functions that limit length, or ensure that the size is larger than the
+  maximum possible length.
+Vulnerable_6.c:461:  [2] (buffer) char:
+  Statically-sized arrays can be improperly restricted, leading to potential
+  overflows or other issues (CWE-119!/CWE-120). Perform bounds checking, use
+  functions that limit length, or ensure that the size is larger than the
+  maximum possible length.
+Vulnerable_6.c:487:  [2] (buffer) char:
+  Statically-sized arrays can be improperly restricted, leading to potential
+  overflows or other issues (CWE-119!/CWE-120). Perform bounds checking, use
+  functions that limit length, or ensure that the size is larger than the
+  maximum possible length.
+Vulnerable_6.c:495:  [2] (buffer) char:
+  Statically-sized arrays can be improperly restricted, leading to potential
+  overflows or other issues (CWE-119!/CWE-120). Perform bounds checking, use
+  functions that limit length, or ensure that the size is larger than the
+  maximum possible length.
+Vulnerable_6.c:496:  [2] (buffer) char:
+  Statically-sized arrays can be improperly restricted, leading to potential
+  overflows or other issues (CWE-119!/CWE-120). Perform bounds checking, use
+  functions that limit length, or ensure that the size is larger than the
+  maximum possible length.
+Vulnerable_6.c:511:  [2] (buffer) char:
+  Statically-sized arrays can be improperly restricted, leading to potential
+  overflows or other issues (CWE-119!/CWE-120). Perform bounds checking, use
+  functions that limit length, or ensure that the size is larger than the
+  maximum possible length.
+Vulnerable_6.c:1016:  [2] (tmpfile) tmpfile:
+  Function tmpfile() has a security flaw on some systems (e.g., older System
+  V systems) (CWE-377).
+Vulnerable_6.c:1073:  [2] (misc) fopen:
+  Check when opening files - can an attacker redirect it (via symlinks),
+  force the opening of special file type (e.g., device files), move things
+  around to create a race condition, control its ancestors, or change its
+  contents? (CWE-362).
+Vulnerable_6.c:1411:  [2] (buffer) strcpy:
+  Does not check for buffer overflows when copying to destination [MS-banned]
+  (CWE-120). Consider using snprintf, strcpy_s, or strlcpy (warning: strncpy
+  easily misused). Risk is low because the source is a constant string.
+Vulnerable_6.c:1414:  [2] (buffer) sprintf:
+  Does not check for buffer overflows (CWE-120). Use sprintf_s, snprintf, or
+  vsnprintf. Risk is low because the source has a constant maximum length.
+Vulnerable_6.c:1440:  [2] (buffer) char:
+  Statically-sized arrays can be improperly restricted, leading to potential
+  overflows or other issues (CWE-119!/CWE-120). Perform bounds checking, use
+  functions that limit length, or ensure that the size is larger than the
+  maximum possible length.
+Vulnerable_6.c:1441:  [2] (buffer) char:
+  Statically-sized arrays can be improperly restricted, leading to potential
+  overflows or other issues (CWE-119!/CWE-120). Perform bounds checking, use
+  functions that limit length, or ensure that the size is larger than the
+  maximum possible length.
+Vulnerable_6.c:1445:  [2] (buffer) memcpy:
+  Does not check for buffer overflows when copying to destination (CWE-120).
+  Make sure destination can always hold the source data.
+Vulnerable_6.c:1446:  [2] (buffer) CopyMemory:
+  Does not check for buffer overflows when copying to destination (CWE-120).
+  Make sure destination can always hold the source data.
+Vulnerable_6.c:1508:  [2] (misc) fopen:
+  Check when opening files - can an attacker redirect it (via symlinks),
+  force the opening of special file type (e.g., device files), move things
+  around to create a race condition, control its ancestors, or change its
+  contents? (CWE-362).
+Vulnerable_6.c:1042:  [1] (buffer) fgetc:
+  Check buffer boundaries if used in a loop including recursive loops
+  (CWE-120, CWE-20).
+Vulnerable_6.c:1046:  [1] (buffer) getc:
+  Check buffer boundaries if used in a loop including recursive loops
+  (CWE-120, CWE-20).
+Vulnerable_6.c:1047:  [1] (buffer) getchar:
+  Check buffer boundaries if used in a loop including recursive loops
+  (CWE-120, CWE-20).
+Vulnerable_6.c:1410:  [1] (buffer) strcpy:
+  Does not check for buffer overflows when copying to destination [MS-banned]
+  (CWE-120). Consider using snprintf, strcpy_s, or strlcpy (warning: strncpy
+  easily misused). Risk is low because the source is a constant character.
+Vulnerable_6.c:1413:  [1] (buffer) sprintf:
+  Does not check for buffer overflows (CWE-120). Use sprintf_s, snprintf, or
+  vsnprintf. Risk is low because the source is a constant character.
+Vulnerable_6.c:1421:  [1] (buffer) scanf:
+  It's unclear if the %s limit in the format string is small enough
+  (CWE-120). Check that the limit is sufficiently small, or use a different
+  input function.
+Vulnerable_6.c:1448:  [1] (buffer) strncpy:
+  Easily used incorrectly; doesn't always \0-terminate or check for invalid
+  pointers [MS-banned] (CWE-120).
+Vulnerable_6.c:1449:  [1] (buffer) _tcsncpy:
+  Easily used incorrectly; doesn't always \0-terminate or check for invalid
+  pointers [MS-banned] (CWE-120).
+Vulnerable_6.c:1450:  [1] (buffer) strncat:
+  Easily used incorrectly (e.g., incorrectly computing the correct maximum
+  size to add) [MS-banned] (CWE-120). Consider strcat_s, strlcat, snprintf,
+  or automatically resizing strings.
+Vulnerable_6.c:1453:  [1] (buffer) strlen:
+  Does not handle strings that are not \0-terminated; if given one it may
+  perform an over-read (it could cause a crash if unprotected) (CWE-126).
+Vulnerable_6.c:1459:  [1] (buffer) MultiByteToWideChar:
+  Requires maximum length in CHARACTERS, not bytes (CWE-120). Risk is very
+  low, the length appears to be in characters not bytes.
+Vulnerable_6.c:1461:  [1] (buffer) MultiByteToWideChar:
+  Requires maximum length in CHARACTERS, not bytes (CWE-120). Risk is very
+  low, the length appears to be in characters not bytes.
+
+
+=========================================================================
+                          Your Code Report           
+=========================================================================
+ANALYSIS SUMMARY:
+
+Hits = 67
+Lines analyzed = 1515 in approximately 0.07 seconds (22935 lines/second)
+Physical Source Lines of Code (SLOC) = 939
+Hits@level = [0]  16 [1]  12 [2]  19 [3]   3 [4]  25 [5]   8
+Hits@level+ = [0+]  83 [1+]  67 [2+]  55 [3+]  36 [4+]  33 [5+]   8
+Hits/KSLOC@level+ = [0+] 88.3919 [1+] 71.3525 [2+] 58.5729 [3+] 38.3387 [4+] 35.1438 [5+] 8.5197
+Minimum risk level = 1
+Not every hit is necessarily a security vulnerability.
+There may be other security vulnerabilities; review your code!
+=======================================================================
+                       End of Code Analysis                 
+=======================================================================

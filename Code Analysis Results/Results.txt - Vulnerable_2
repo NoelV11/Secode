@@ -1,0 +1,79 @@
+secode version x.x.x, (C) 2021
+Number of rules (primarily dangerous function names) in C/C++ ruleset: 223
+Examining Vulnerable_2.c
+
+FINAL RESULTS:
+
+Vulnerable_2.c:16:  [5] (buffer) strncat:
+  Easily used incorrectly (e.g., incorrectly computing the correct maximum
+  size to add) [MS-banned] (CWE-120). Consider strcat_s, strlcat, snprintf,
+  or automatically resizing strings. Risk is high; the length parameter
+  appears to be a constant, instead of computing the number of characters
+  left.
+Vulnerable_2.c:17:  [5] (buffer) _tcsncat:
+  Easily used incorrectly (e.g., incorrectly computing the correct maximum
+  size to add) [MS-banned] (CWE-120). Consider strcat_s, strlcat, or
+  automatically resizing strings. Risk is high; the length parameter appears
+  to be a constant, instead of computing the number of characters left.
+Vulnerable_2.c:20:  [5] (buffer) MultiByteToWideChar:
+  Requires maximum length in CHARACTERS, not bytes (CWE-120). Risk is high,
+  it appears that the size is given as bytes, but the function requires size
+  as characters.
+Vulnerable_2.c:9:  [4] (buffer) _mbscpy:
+  Does not check for buffer overflows when copying to destination [MS-banned]
+  (CWE-120). Consider using a function version that stops copying at the end
+  of the buffer.
+Vulnerable_2.c:12:  [4] (buffer) lstrcat:
+  Does not check for buffer overflows when concatenating to destination
+  [MS-banned] (CWE-120).
+Vulnerable_2.c:5:  [2] (buffer) char:
+  Statically-sized arrays can be improperly restricted, leading to potential
+  overflows or other issues (CWE-119!/CWE-120). Perform bounds checking, use
+  functions that limit length, or ensure that the size is larger than the
+  maximum possible length.
+Vulnerable_2.c:6:  [2] (buffer) char:
+  Statically-sized arrays can be improperly restricted, leading to potential
+  overflows or other issues (CWE-119!/CWE-120). Perform bounds checking, use
+  functions that limit length, or ensure that the size is larger than the
+  maximum possible length.
+Vulnerable_2.c:10:  [2] (buffer) memcpy:
+  Does not check for buffer overflows when copying to destination (CWE-120).
+  Make sure destination can always hold the source data.
+Vulnerable_2.c:11:  [2] (buffer) CopyMemory:
+  Does not check for buffer overflows when copying to destination (CWE-120).
+  Make sure destination can always hold the source data.
+Vulnerable_2.c:13:  [1] (buffer) strncpy:
+  Easily used incorrectly; doesn't always \0-terminate or check for invalid
+  pointers [MS-banned] (CWE-120).
+Vulnerable_2.c:14:  [1] (buffer) _tcsncpy:
+  Easily used incorrectly; doesn't always \0-terminate or check for invalid
+  pointers [MS-banned] (CWE-120).
+Vulnerable_2.c:15:  [1] (buffer) strncat:
+  Easily used incorrectly (e.g., incorrectly computing the correct maximum
+  size to add) [MS-banned] (CWE-120). Consider strcat_s, strlcat, snprintf,
+  or automatically resizing strings.
+Vulnerable_2.c:18:  [1] (buffer) strlen:
+  Does not handle strings that are not \0-terminated; if given one it may
+  perform an over-read (it could cause a crash if unprotected) (CWE-126).
+Vulnerable_2.c:22:  [1] (buffer) MultiByteToWideChar:
+  Requires maximum length in CHARACTERS, not bytes (CWE-120). Risk is very
+  low, the length appears to be in characters not bytes.
+
+
+=========================================================================
+                          Your Code Report           
+=========================================================================
+ANALYSIS SUMMARY:
+
+Hits = 14
+Lines analyzed = 23 in approximately 0.02 seconds (973 lines/second)
+Physical Source Lines of Code (SLOC) = 17
+Hits@level = [0]   0 [1]   5 [2]   4 [3]   0 [4]   2 [5]   3
+Hits@level+ = [0+]  14 [1+]  14 [2+]   9 [3+]   5 [4+]   5 [5+]   3
+Hits/KSLOC@level+ = [0+] 823.529 [1+] 823.529 [2+] 529.412 [3+] 294.118 [4+] 294.118 [5+] 176.471
+Minimum risk level = 1
+Not every hit is necessarily a security vulnerability.
+There may be other security vulnerabilities; review your code!
+=======================================================================
+                       End of Code Analysis                 
+=======================================================================

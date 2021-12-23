@@ -1,11 +1,6 @@
-# Flawfinder.
-# Released under the General Public License (GPL) version 2 or later.
-# (C) 2001-2017 David A. Wheeler.
 
-# See "release_process.md" for release process, including
-# how to change version numbers.
 
-NAME=flawfinder
+NAME=Secode
 VERSION=2.0.10
 RPM_VERSION=1
 VERSIONEDNAME=$(NAME)-$(VERSION)
@@ -16,11 +11,7 @@ PYTHON=python
 PYTHON2=python2
 PYTHON3=python3
 
-# Flawfinder has traditionally used INSTALL_DIR, INSTALL_DIR_BIN, and
-# INSTALL_DIR_MAN.  Here we add support for GNU variables like prefix, etc.;
-# users who override the older flawfinder-specific variable names will
-# not notice any changes.  We define exec_prefix oddly so we can
-# quietly merge these 2 systems:
+
 
 prefix=/usr/local
 INSTALL_DIR=$(prefix)

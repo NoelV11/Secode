@@ -31,8 +31,7 @@ python3 secode.py /path/to/file.c
 
 ## Output Formats supported
 
-- txt
-- PDF and
+- txt and
 - CSV
 
 For example:-

@@ -2190,8 +2190,9 @@ def show_final_results():
             print("See '<a href=\"https://dwheeler.com/secure-programs\">Secure Programming HOWTO</a>'")
             print("(<a href=\"https://dwheeler.com/secure-programs\">https://dwheeler.com/secure-programs</a>) for more information.")
         else:
-            print("See 'Secure Programming HOWTO'")
-            print("(https://dwheeler.com/secure-programs) for more information.")
+            print("===================================================================================================================")
+            print("                                                 End of Code Analysis                                              ")
+            print("====================================================================================================================")
         if output_format:
             print("</body>")
             print("</html>")

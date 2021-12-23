@@ -2187,8 +2187,8 @@ def show_final_results():
         print("There may be other security vulnerabilities; review your code!")
         if output_format:
             print("<br>")
-            print("See '<a href=\"https://dwheeler.com/secure-programs\">Secure Programming HOWTO</a>'")
-            print("(<a href=\"https://dwheeler.com/secure-programs\">https://dwheeler.com/secure-programs</a>) for more information.")
+            print(" ")
+            print(" ")
         else:
             print("===================================================================================================================")
             print("                                                 End of Code Analysis                                              ")

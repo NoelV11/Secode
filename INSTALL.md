@@ -138,4 +138,4 @@ python3 secode.py /path/to/file.c
 
 For example:-
 
-python3 secode.py /path/to/file.c > <nameoffile> .pdf
+python3 secode.py /path/to/file.c > Results.pdf

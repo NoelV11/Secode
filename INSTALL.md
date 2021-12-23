@@ -127,5 +127,5 @@ You can also simply run the program in the directory you've unpacked it
 into.   It's a simple Python program, just type into a command line:
 
 ~~~~
-./secode FILES-OR-DIRECTORY
+python3 secode.py /path/to/file.c
 ~~~~

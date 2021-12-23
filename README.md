@@ -21,3 +21,32 @@ development process of any software
     1. Web Technologies like HTML, CSS, Js and PHP
     2. App Development languages like Java and Kotlin
 - GitHub Actions workflows Integration.
+
+## Installation Guide
+The manual page (secode.1 or secode.pdf) describes how to use
+secode (including its various options) and related information
+(such as how it supports CWE).  For example, the `--html` option generates
+output in HTML format. The `--help` option gives a brief list of options.
+
+# Under the hood
+
+More technically, secode uses lexical scanning to find tokens
+(such as function names) that suggest likely vulnerabilities, estimates their
+level of risk (e.g., by the text of function calls), and reports the results.
+secode does not use or have access to information about control flow,
+data flow, or data types.  Thus, secode will necessarily
+produce many false positives for vulnerabilities and fail to report
+many vulnerabilities.  On the other hand, secode can find
+vulnerabilities in programs that cannot be built or cannot be linked.
+secode also doesn't get as confused by macro definitions
+and other oddities that more sophisticated tools have trouble with.
+
+# Contributions
+
+We love contributions!  For more information on contributing, see
+the file [CONTRIBUTING.md](CONTRIBUTING.md).
+
+# License
+
+secode is released under the GNU GPL license version 2 or later (GPL-2.0+).
+See the [COPYING](COPYING) file for license information.

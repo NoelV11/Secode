@@ -10,9 +10,14 @@ development process of any software
 - **But, it doesn't stops there, _it provides you with safer function alternatives like for use of `strcpy()` you must use Secure alternative's like `lstrcy()`, that you can implement on your code, to make it Safe and Secure._**
 
 ## What Does Secode Scan on The Code(s) You Provide?
+
+Your Code Report provides you information about:-
+
+- Hit count of vulnerable functions (total count)
 - Vulnerability at hand
 - CWE Number associated with it
 - A brief description about the vulnerability
+- Risk level of your code (graded from 1 - 5,on the severity basis)
 - Secure alternative(s) that you must use which are totally safe from exploits.
 
 ## Roadmap

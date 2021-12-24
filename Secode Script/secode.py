@@ -52,7 +52,7 @@ import csv  # To support generating CSV format
 import hashlib
 # import formatter
 
-version = "x.x.x"
+version = "1"
 
 # Program Options - these are the default values.
 # TODO: Switch to boolean types where appropriate.

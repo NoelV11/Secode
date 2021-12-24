@@ -54,3 +54,14 @@ For example:-
 ~~~~
 python3 secode.py /path/to/file.c > Results.pdf
 ~~~~
+
+Output Format
+
+This is the code report one gets after scanning their .c file(in this case,the analyzed code contains insecure functions,which we had previously identified and compiled in the ruleset file)
+
+![3](https://user-images.githubusercontent.com/77625109/147365491-f5684c4f-690a-419f-8033-d90bc060bd2e.png)
+
+
+
+
+

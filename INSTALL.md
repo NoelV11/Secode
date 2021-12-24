@@ -12,9 +12,7 @@ For many, the simple approach is to first install Python
 Then use `pip` to install Secode
 (this will normally download the package):
 
-~~~~
-pip install secode
-~~~~
+![1](https://user-images.githubusercontent.com/77625109/147364745-2a377835-3625-4691-91b9-64f2737e0584.png)
 
 One advantage for using pip is that you'll generally get the
 *current* released version.

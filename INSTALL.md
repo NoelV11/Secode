@@ -23,9 +23,7 @@ One advantage for using pip is that you'll generally get the
 You can also simply run the program in the directory you've unpacked it
 into.   It's a simple Python program, just type into a command line:
 
-~~~~
-python3 secode.py /path/to/file.c
-~~~~
+![2](https://user-images.githubusercontent.com/77625109/147364907-ccf19ce8-eed5-4f34-983c-7735c8e4a0a0.png)
 
 ## Output Formats supported
 

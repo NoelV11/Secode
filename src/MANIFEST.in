@@ -2,11 +2,10 @@ include COPYING
 include README.md
 include announcement
 include ChangeLog
-include flawfinder.1*
-include flawfinder.pdf
-include flawfinder.ps
+include secode.1*
+include secode.ps
 
-include flawfinder
+include secode
 include makefile
 include setup.cfg
 include setup.py

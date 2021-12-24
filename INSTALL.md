@@ -12,9 +12,7 @@ For many, the simple approach is to first install Python
 Then use `pip` to install Secode
 (this will normally download the package):
 
-~~~~
-pip install secode
-~~~~
+![carbon](https://user-images.githubusercontent.com/77625109/147363522-936df663-6e5a-4cd7-ab3b-3e3396bba91e.png)
 
 One advantage for using pip is that you'll generally get the
 *current* released version.

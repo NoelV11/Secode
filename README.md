@@ -54,4 +54,4 @@ the file [CONTRIBUTING.md](CONTRIBUTING.md).
 # License
 
 Secode is released under the GNU GPL license version 2 or later (GPL-2.0+).
-See the [LICENSE](https://github.com/AliasgarSabunwala/Secode/blob/e86853abb4df4906418c806cd0d3dfbc351cf25c/LICENSE) file for license information.
+See the [LICENSE](LICENSE) file for license information.

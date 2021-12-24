@@ -23,7 +23,7 @@ One advantage for using pip is that you'll generally get the
 You can also simply run the program in the directory you've unpacked it
 into.   It's a simple Python program, just type into a command line:
 
-![2](https://user-images.githubusercontent.com/77625109/147364907-ccf19ce8-eed5-4f34-983c-7735c8e4a0a0.png)
+![2](https://user-images.githubusercontent.com/77625109/147364977-ea883dfd-81af-45ff-949b-5fa0f5a221c3.png)
 
 ## Output Formats supported
 

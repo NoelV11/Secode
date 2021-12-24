@@ -1,6 +1,6 @@
 %{
 
-/* cwe by David A. Wheeler (http://www.dwheeler.com).
+/* cwe by The Secode Team.
    This prints anything of the form CWE-#
 */
 

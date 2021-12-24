@@ -33,6 +33,7 @@ This will work out-of-the-box; it may not be the most recent version.
 
 One way to accomplish this is:
 
+P.S Make sure that you have Python 3.0 or higher
 ~~~~
 sudo apt install secode
 ~~~~
@@ -51,9 +52,8 @@ into.   It's a simple Python program, just type into a command line:
 
 For example:-
 
-~~~~
-python3 secode.py /path/to/file.c > Results.pdf
-~~~~
+
+![3](https://user-images.githubusercontent.com/77625109/147365058-d9d8c2ef-fbea-4e64-a504-a11b77a266bc.png)
 
 Output Format
 

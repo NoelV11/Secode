@@ -37,9 +37,8 @@ python3 secode.py /path/to/file.c
 
 For example:-
 
-~~~~
-python3 secode.py /path/to/file.c > Results.pdf
-~~~~
+
+![3](https://user-images.githubusercontent.com/77625109/147365058-d9d8c2ef-fbea-4e64-a504-a11b77a266bc.png)
 
 ## 3.PACKAGE FOR UNIX-LIKE SYSTEM (including Cygwin):
 

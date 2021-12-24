@@ -20,18 +20,10 @@ Your Code Report provides you information about:-
 - Risk level of your code (graded from 1 - 5,on the severity basis)
 - Secure alternative(s) that you must use which are totally safe from exploits.
 
-## Roadmap
-- Dockerize to provide support across all platforms
-- Extending Scanning functionalities within the tool to: 
-    1. Web Technologies like HTML, CSS, Js and PHP
-    2. App Development languages like Java and Kotlin
-- GitHub Actions workflows Integration.
 
 ## Installation Guide
-The manual page (secode.1 or secode.pdf) describes how to use
-secode (including its various options) and related information
-(such as how it supports CWE).  For example, the `--html` option generates
-output in HTML format. The `--help` option gives a brief list of options.
+
+Refer the INSTALL.md file for an in-depth walkthrough on how to install the tool,on your Linux distro
 
 # Under the hood
 
@@ -45,6 +37,13 @@ many vulnerabilities.  On the other hand, secode can find
 vulnerabilities in programs that cannot be built or cannot be linked.
 secode also doesn't get as confused by macro definitions
 and other oddities that more sophisticated tools have trouble with.
+
+## Roadmap
+- Dockerize to provide support across all platforms
+- Extending Scanning functionalities within the tool to: 
+    1. Web Technologies like HTML, CSS, Js and PHP
+    2. App Development languages like Java and Kotlin
+- GitHub Actions workflows Integration.
 
 # Contributions
 

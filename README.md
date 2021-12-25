@@ -1,5 +1,5 @@
 # Secode
-- Secode is Insecure Code Detector tool, that analyzes your code, to find anomalies in your codes, say Insecure Functions, that makes your code insecure. 
+- Secode is an insecure Code Detector tool, that analyzes your code, to find anomalies, say Insecure Functions in your codes, that makee it insecure. 
 - But, it doesn't stop there - as a precautionary measure, Secode provides you with safer function alternatives - like for the use of `strcpy()` which is vulnerable to Buffer Overflow,you must instead use secure alternative(s) like `lstrcy()`, that you can implement on your code, to make it secure.
 
 # How is it different?

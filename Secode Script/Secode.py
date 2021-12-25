@@ -1,4 +1,4 @@
-"""secode: Find potential security flaws ("hits") in source code.
+"""Secode: Find potential security flaws ("hits") in source code.
  Usage:
    secode [options] [source_code_file]+
  See the man page for a description of the options."""

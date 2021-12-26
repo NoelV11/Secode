@@ -1,0 +1,35 @@
+secode version x.x.x, (C) 2021
+Number of rules (primarily dangerous function names) in C/C++ ruleset: 223
+Examining Vulnerable_14.c
+
+FINAL RESULTS:
+
+Vulnerable_14.c:54:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+Vulnerable_14.c:56:  [3] (buffer) getenv:
+  Environment variables are untrustable input if they can be set by an
+  attacker. They can have any content and length, and the same variable can
+  be set more than once (CWE-807, CWE-20). Check environment variables
+  carefully before using them.
+
+
+=========================================================================
+                          Your Code Report           
+=========================================================================
+ANALYSIS SUMMARY:
+
+Hits = 2
+Lines analyzed = 280 in approximately 0.01 seconds (47678 lines/second)
+Physical Source Lines of Code (SLOC) = 226
+Hits@level = [0]   0 [1]   0 [2]   0 [3]   2 [4]   0 [5]   0
+Hits@level+ = [0+]   2 [1+]   2 [2+]   2 [3+]   2 [4+]   0 [5+]   0
+Hits/KSLOC@level+ = [0+] 8.84956 [1+] 8.84956 [2+] 8.84956 [3+] 8.84956 [4+]   0 [5+]   0
+Minimum risk level = 1
+Not every hit is necessarily a security vulnerability.
+There may be other security vulnerabilities; review your code!
+=======================================================================
+                       End of Code Analysis                 
+=======================================================================

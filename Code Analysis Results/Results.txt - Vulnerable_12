@@ -1,0 +1,35 @@
+secode version x.x.x, (C) 2021
+Number of rules (primarily dangerous function names) in C/C++ ruleset: 223
+Examining Vulnerable_15.c
+
+FINAL RESULTS:
+
+Vulnerable_15.c:27:  [2] (misc) open:
+  Check when opening files - can an attacker redirect it (via symlinks),
+  force the opening of special file type (e.g., device files), move things
+  around to create a race condition, control its ancestors, or change its
+  contents? (CWE-362).
+Vulnerable_15.c:415:  [2] (misc) open:
+  Check when opening files - can an attacker redirect it (via symlinks),
+  force the opening of special file type (e.g., device files), move things
+  around to create a race condition, control its ancestors, or change its
+  contents? (CWE-362).
+
+
+=========================================================================
+                          Your Code Report           
+=========================================================================
+ANALYSIS SUMMARY:
+
+Hits = 2
+Lines analyzed = 774 in approximately 0.01 seconds (59761 lines/second)
+Physical Source Lines of Code (SLOC) = 666
+Hits@level = [0]   0 [1]   0 [2]   2 [3]   0 [4]   0 [5]   0
+Hits@level+ = [0+]   2 [1+]   2 [2+]   2 [3+]   0 [4+]   0 [5+]   0
+Hits/KSLOC@level+ = [0+] 3.003 [1+] 3.003 [2+] 3.003 [3+]   0 [4+]   0 [5+]   0
+Minimum risk level = 1
+Not every hit is necessarily a security vulnerability.
+There may be other security vulnerabilities; review your code!
+=======================================================================
+                       End of Code Analysis                 
+=======================================================================

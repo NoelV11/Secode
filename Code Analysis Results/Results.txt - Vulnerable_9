@@ -1,0 +1,49 @@
+secode version x.x.x, (C) 2021
+Number of rules (primarily dangerous function names) in C/C++ ruleset: 223
+Examining Vulnerable_9.c
+
+FINAL RESULTS:
+
+Vulnerable_9.c:20:  [4] (shell) system:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+Vulnerable_9.c:40:  [4] (shell) system:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+Vulnerable_9.c:55:  [4] (shell) system:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+Vulnerable_9.c:99:  [4] (shell) system:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+Vulnerable_9.c:119:  [4] (shell) system:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+Vulnerable_9.c:134:  [4] (shell) system:
+  This causes a new program to execute and is difficult to use safely
+  (CWE-78). try using a library call that implements the same functionality
+  if available.
+
+
+=========================================================================
+                          Your Code Report           
+=========================================================================
+ANALYSIS SUMMARY:
+
+Hits = 6
+Lines analyzed = 162 in approximately 0.01 seconds (27523 lines/second)
+Physical Source Lines of Code (SLOC) = 95
+Hits@level = [0]   0 [1]   0 [2]   0 [3]   0 [4]   6 [5]   0
+Hits@level+ = [0+]   6 [1+]   6 [2+]   6 [3+]   6 [4+]   6 [5+]   0
+Hits/KSLOC@level+ = [0+] 63.1579 [1+] 63.1579 [2+] 63.1579 [3+] 63.1579 [4+] 63.1579 [5+]   0
+Minimum risk level = 1
+Not every hit is necessarily a security vulnerability.
+There may be other security vulnerabilities; review your code!
+=======================================================================
+                       End of Code Analysis                 
+=======================================================================

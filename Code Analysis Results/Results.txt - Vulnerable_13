@@ -1,0 +1,35 @@
+secode version x.x.x, (C) 2021
+Number of rules (primarily dangerous function names) in C/C++ ruleset: 223
+Examining Vulnerable_17.c
+
+FINAL RESULTS:
+
+Vulnerable_17.c:54:  [3] (random) srand:
+  This function is not sufficiently random for security-related functions
+  such as key and nonce creation (CWE-327). Use a more secure technique for
+  acquiring random values.
+Vulnerable_17.c:16:  [1] (buffer) strlen:
+  Does not handle strings that are not \0-terminated; if given one it may
+  perform an over-read (it could cause a crash if unprotected) (CWE-126).
+Vulnerable_17.c:84:  [1] (buffer) strlen:
+  Does not handle strings that are not \0-terminated; if given one it may
+  perform an over-read (it could cause a crash if unprotected) (CWE-126).
+
+
+=========================================================================
+                          Your Code Report           
+=========================================================================
+ANALYSIS SUMMARY:
+
+Hits = 3
+Lines analyzed = 132 in approximately 0.01 seconds (26332 lines/second)
+Physical Source Lines of Code (SLOC) = 94
+Hits@level = [0]   0 [1]   2 [2]   0 [3]   1 [4]   0 [5]   0
+Hits@level+ = [0+]   3 [1+]   3 [2+]   1 [3+]   1 [4+]   0 [5+]   0
+Hits/KSLOC@level+ = [0+] 31.9149 [1+] 31.9149 [2+] 10.6383 [3+] 10.6383 [4+]   0 [5+]   0
+Minimum risk level = 1
+Not every hit is necessarily a security vulnerability.
+There may be other security vulnerabilities; review your code!
+=======================================================================
+                       End of Code Analysis                 
+=======================================================================

@@ -53,7 +53,7 @@ import hashlib
 import pyfiglet
 head = pyfiglet.figlet_format("Secode:An Insecure Code Detector")
 print(head)
-Creators = "Created by @AliasgarSabun , @Sec_Noel , @OorjaRungta and @MonsieurDortag1"
+Creators = "Created by @AliasgarSabun , @Sec_Noel , @OorjaRungta and @MonsieurDartag1"
 text = Creators.center(100)
 print(text)
 print("")

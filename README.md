@@ -1,4 +1,9 @@
 # Secode
+
+[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 - Secode is an insecure Code Detector tool, that analyzes your code, to find anomalies, say Insecure Functions in your codes, that makee it insecure. 
 - But, it doesn't stop there - as a precautionary measure, Secode provides you with safer function alternatives - like for the use of `strcpy()` which is vulnerable to Buffer Overflow,you must instead use secure alternative(s) like `lstrcy()`, that you can implement on your code, to make it secure.
 

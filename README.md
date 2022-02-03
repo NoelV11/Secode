@@ -9,7 +9,7 @@
 - Secode is powered by a **stringent and comprehensive ruleset**, that can detect vulnerabilities pretty easily, which will be updated regularly, 
 as more vulnerabilities and exploits emerge.
 - Secode enforces the concept of "**Secure Coding" and "Secure Software Devloepment Life Cycle (Secure SDLC)"** which is now gaining much needed traction during the 
-development process of any software
+development process of any software.
 
 ## What does a Secode scan on the Code(s) you provide,give you?
 

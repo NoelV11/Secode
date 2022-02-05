@@ -1,9 +1,4 @@
-secode version x.x.x, (C) 2021
-Number of rules (primarily dangerous function names) in C/C++ ruleset: 223
-Examining Vulnerable_1.c
-Examining -
-*** secode interrupted
-secode version x.x.x, (C) 2021
+Secode version 1.0 (C) 2021
 Number of rules (primarily dangerous function names) in C/C++ ruleset: 223
 Examining Vulnerable_1.c
 
@@ -11,16 +6,25 @@ FINAL RESULTS:
 
 Vulnerable_1.c:23:  [1] (buffer) strncpy:
   Easily used incorrectly; doesn't always \0-terminate or check for invalid
-  pointers [MS-banned] (CWE-120). Risk is low because the source is a
-  constant string.
+  pointers [MS-banned] (CWE-120).
+  --------------------------------------------------------------------------
+  [+] NO countermeasures,unless specified. Risk is low because the source is
+  a constant string.
+
 Vulnerable_1.c:24:  [1] (buffer) strncpy:
   Easily used incorrectly; doesn't always \0-terminate or check for invalid
-  pointers [MS-banned] (CWE-120). Risk is low because the source is a
-  constant string.
+  pointers [MS-banned] (CWE-120).
+  --------------------------------------------------------------------------
+  [+] NO countermeasures,unless specified. Risk is low because the source is
+  a constant string.
+
 Vulnerable_1.c:25:  [1] (buffer) strncpy:
   Easily used incorrectly; doesn't always \0-terminate or check for invalid
-  pointers [MS-banned] (CWE-120). Risk is low because the source is a
-  constant string.
+  pointers [MS-banned] (CWE-120).
+  --------------------------------------------------------------------------
+  [+] NO countermeasures,unless specified. Risk is low because the source is
+  a constant string.
+
 
 
 =========================================================================
@@ -29,7 +33,7 @@ Vulnerable_1.c:25:  [1] (buffer) strncpy:
 ANALYSIS SUMMARY:
 
 Hits = 3
-Lines analyzed = 39 in approximately 0.00 seconds (8724 lines/second)
+Lines analyzed = 39 in approximately 0.01 seconds (7740 lines/second)
 Physical Source Lines of Code (SLOC) = 27
 Hits@level = [0]   0 [1]   3 [2]   0 [3]   0 [4]   0 [5]   0
 Hits@level+ = [0+]   3 [1+]   3 [2+]   0 [3+]   0 [4+]   0 [5+]   0
@@ -40,3 +44,4 @@ There may be other security vulnerabilities; review your code!
 =======================================================================
                        End of Code Analysis                 
 =======================================================================
+

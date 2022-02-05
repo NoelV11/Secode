@@ -31,8 +31,9 @@ into.   It's a simple Python program, just type into a command line:
 
 For example:-
 
+![image](https://user-images.githubusercontent.com/77625109/152655199-22c2c6bb-662a-4c5d-acec-96376b500bdf.png)
 
-![3](https://user-images.githubusercontent.com/77625109/147365058-d9d8c2ef-fbea-4e64-a504-a11b77a266bc.png)
+
 
 Output Format
 
@@ -43,6 +44,7 @@ This is the code report one gets after scanning their .c file(in this case,the a
 From the sample output we can note the following:-
 
 - Hits - number of insecure functions detected
+- An appropriate countermeasure function or best practice,that can be used to remove the vulnerable function
 - Lines Analyzed - derived from the total number of lines in the code
 - Severity levels - graded from 1 to 5
 - Risk level of analyzed code

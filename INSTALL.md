@@ -22,15 +22,14 @@ git clone https://github.com/NoelV11/Secode.git
 You can also simply run the program in the directory you've unpacked it
 into.   It's a simple Python program, just type into a command line:
 
-![2](https://user-images.githubusercontent.com/77625109/147364977-ea883dfd-81af-45ff-949b-5fa0f5a221c3.png)
+~~~~
+python3 secode.py Vulnerable_1.c >> Results.txt
+~~~~
 
 ## Output Formats supported
 
 - txt and
 - CSV
-~~~~
-python3 secode.py Vulnerable_1.c >> Results.txt
-~~~~
 
 ## Output Structure
 

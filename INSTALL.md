@@ -12,39 +12,11 @@ Meet the requirements
 apt update | apt upgrade 
 ~~~~
 
-## 1. Cloning the repository
+## Cloning the repository
 
 
 ~~~~
 git clone https://github.com/NoelV11/Secode.git
-~~~~
-
-## 2. PIP
-
-For many, the simple approach is to first install Python
-(2.7 or something reasonable in the 3.X series).
-Then use `pip` to install Secode
-(this will normally download the package):
-
-![1](https://user-images.githubusercontent.com/77625109/147364745-2a377835-3625-4691-91b9-64f2737e0584.png)
-
-One advantage for using pip is that you'll generally get the
-*current* released version.
-
-## 3.PACKAGE FOR UNIX-LIKE SYSTEM (including Cygwin):
-
-If you use an RPM-based system (e.g., Red Hat) or deb-based system
-(e.g., Debian), you can use their respective RPM or debian installation
-program and just install it; then ignore the rest of these instructions.
-For a ports-based system where you have a current port, just use that.
-
-This will work out-of-the-box; it may not be the most recent version.
-
-One way to accomplish this is:
-
-P.S Make sure that you have Python 3.0 or higher
-~~~~
-sudo apt install secode
 ~~~~
 
 ## Tool Operation

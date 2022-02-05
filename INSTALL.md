@@ -1,8 +1,6 @@
 # Installing Secode
 
-You can install Secode a number of different ways.
-Choose the approach that's most convenient for you!
-The options (described below) are (1) pip, (2) package for Unix-like system, (3) source install, and (4) run directly.
+You can install Secode by cloning it,using git
 
 ## Prior to install
 

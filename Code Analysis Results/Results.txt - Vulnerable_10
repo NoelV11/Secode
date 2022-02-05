@@ -1,12 +1,14 @@
-secode version x.x.x, (C) 2021
+Secode version 1.0 (C) 2021
 Number of rules (primarily dangerous function names) in C/C++ ruleset: 223
-Examining Vulnerable_12.c
+Examining Vulnerable_10.c
 
 FINAL RESULTS:
 
-Vulnerable_12.c:22:  [4] (buffer) sprintf:
-  Does not check for buffer overflows (CWE-120). Use sprintf_s, snprintf, or
-  vsnprintf.
+Vulnerable_10.c:22:  [4] (buffer) sprintf:
+  Does not check for buffer overflows (CWE-120).
+  --------------------------------------------------------------------------
+  [+] Use sprintf_s, snprintf, or vsnprintf.
+
 
 
 =========================================================================
@@ -15,7 +17,7 @@ Vulnerable_12.c:22:  [4] (buffer) sprintf:
 ANALYSIS SUMMARY:
 
 Hits = 1
-Lines analyzed = 209 in approximately 0.01 seconds (29714 lines/second)
+Lines analyzed = 208 in approximately 0.01 seconds (20955 lines/second)
 Physical Source Lines of Code (SLOC) = 193
 Hits@level = [0]   0 [1]   0 [2]   0 [3]   0 [4]   1 [5]   0
 Hits@level+ = [0+]   1 [1+]   1 [2+]   1 [3+]   1 [4+]   1 [5+]   0

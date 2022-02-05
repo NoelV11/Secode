@@ -28,18 +28,15 @@ into.   It's a simple Python program, just type into a command line:
 
 - txt and
 - CSV
+~~~~
+python3 secode.py Vulnerable_1.c >> Results.txt
+~~~~
 
-For example:-
-
-![image](https://user-images.githubusercontent.com/77625109/152655199-22c2c6bb-662a-4c5d-acec-96376b500bdf.png)
-
-
-
-Output Format
+## Output Structure
 
 This is the code report one gets after scanning their .c file(in this case,the analyzed code contains insecure functions,which we had previously identified and compiled in the ruleset file)
 
-![3](https://user-images.githubusercontent.com/77625109/147365491-f5684c4f-690a-419f-8033-d90bc060bd2e.png)
+![H1](https://user-images.githubusercontent.com/77625109/152655310-0899ba05-f684-4e5c-89ff-bff3c99e91c6.png)
 
 From the sample output we can note the following:-
 

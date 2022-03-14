@@ -13,7 +13,7 @@ development process of any software.
 
 ## What does a Secode scan on the Code(s) you provide,give you?
 
-Your Code Report provides you information about:-
+Your Code Report provides information about:-
 
 - Hit count of vulnerable functions (total count)
 - Vulnerability at hand

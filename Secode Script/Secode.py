@@ -871,12 +871,13 @@ def normal(hit):
 # http://msdn.microsoft.com/en-us/library/bb288454.aspx
 
 c_ruleset = {
-    "strcpy":
+    "strcpy| ":
     (c_buffer, 4,
      "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
     '--------------------------------------------------------------------------'
      "  [+]  Consider using snprintf, strcpy_s, or strlcpy (warning: strncpy easily misused)",
      "buffer", "", {}),
+    
     "strcpyA|strcpyW|StrCpy|StrCpyA|lstrcpyA|lstrcpyW|_tccpy|_mbccpy|_ftcscpy|_mbsncpy|StrCpyN|StrCpyNA|StrCpyNW|StrNCpy|strcpynA|StrNCpyA|StrNCpyW|lstrcpynA|lstrcpynW":
     # We need more info on these functions; I got their names from the
     # Microsoft "banned" list.  For now, just use "normal" to process them
@@ -886,24 +887,28 @@ c_ruleset = {
      '--------------------------------------------------------------------------'
      "  [+]  Consider using snprintf, strcpy_s, or strlcpy (warning: strncpy easily misused)",
      "buffer", "", {}),
+    
     "lstrcpy|wcscpy|_tcscpy|_mbscpy":
     (c_buffer, 4,
      "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120)",
      '--------------------------------------------------------------------------'
      "  [+]  Consider using a function version that stops copying at the end of the buffer",
      "buffer", "", {}),
+    
     "memcpy|CopyMemory|bcopy":
     (c_memcpy, 2,  # I've found this to have a lower risk in practice.
      "Does not check for buffer overflows when copying to destination (CWE-120)",
    '--------------------------------------------------------------------------' 
    "  [+]  Make sure destination can always hold the source data",
      "buffer", "", {}),
+    
     "strcat":
     (c_buffer, 4,
      "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
      '--------------------------------------------------------------------------'
      "  [+]  Consider using strcat_s, strncat, strlcat, or snprintf (warning: strncat is easily misused)",
      "buffer", "", {}),
+    
     "lstrcat|wcscat|_tcscat|_mbscat":
     (c_buffer, 4,
      "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
@@ -912,6 +917,7 @@ c_ruleset = {
       "",
      "buffer", "", {}),
     # TODO: Do more analysis.  Added because they're in MS banned list.
+    
     "StrCat|StrCatA|StrcatW|lstrcatA|lstrcatW|strCatBuff|StrCatBuffA|StrCatBuffW|StrCatChainW|_tccat|_mbccat|_ftcscat|StrCatN|StrCatNA|StrCatNW|StrNCat|StrNCatA|StrNCatW|lstrncat|lstrcatnA|lstrcatnW":
     (normal, 4,
      "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120)",
@@ -919,18 +925,8 @@ c_ruleset = {
       '  [+]  NO countermeasures,unless specified'
      "",
      "buffer", "", {}),
-    "strncpy":
-    (c_buffer,
-     1,  # Low risk level, because this is often used correctly when FIXING security
-     # problems, and raising it to a higher risk level would cause many false
-     # positives.
-     "Easily used incorrectly; doesn't always \\0-terminate or "
-     "check for invalid pointers [MS-banned] (CWE-120)",
-     '--------------------------------------------------------------------------'
-      '  [+]  NO countermeasures,unless specified'
-     "",
-     "buffer", "", {}),
-    "lstrcpyn|wcsncpy|_tcsncpy|_mbsnbcpy":
+ 
+    "strncpy|lstrcpyn|wcsncpy|_tcsncpy|_mbsnbcpy":
     (c_buffer,
      1,  # Low risk level, because this is often used correctly when FIXING security
      # problems, and raising it to a higher risk levle would cause many false
@@ -941,7 +937,8 @@ c_ruleset = {
       '  [+]  NO countermeasures,unless specified'
      "",
      "buffer", "", {}),
-    "strncat":
+    
+    "strncat|lstrcatn|wcsncat|_tcsncat|_mbsnbcat":
     (c_strncat,
      1,  # Low risk level, because this is often used correctly when
      # FIXING security problems, and raising it to a
@@ -950,21 +947,14 @@ c_ruleset = {
       '--------------------------------------------------------------------------'
      "  [+]  Consider strcat_s, strlcat, snprintf, or automatically resizing strings",
      "buffer", "", {}),
-    "lstrcatn|wcsncat|_tcsncat|_mbsnbcat":
-    (c_strncat,
-     1,  # Low risk level, because this is often used correctly when FIXING security
-     # problems, and raising it to a higher risk level would cause many false
-     # positives.
-     "Easily used incorrectly (e.g., incorrectly computing the correct maximum size to add) [MS-banned] (CWE-120)",
-      '--------------------------------------------------------------------------'
-     "  [+]  Consider strcat_s, strlcat, or automatically resizing strings",
-     "buffer", "", {}),
+    
     "strccpy|strcadd":
     (normal, 1,
      "Subject to buffer overflow if buffer is not as big as claimed (CWE-120)",
      '--------------------------------------------------------------------------'
      "  [+]  Ensure that destination buffer is sufficiently large",
      "buffer", "", {}),
+    
     "char|TCHAR|wchar_t":  # This isn't really a function call, but it works.
     (c_static_array, 2,
      "Statically-sized arrays can be improperly restricted, "
@@ -987,19 +977,12 @@ c_ruleset = {
      "  [+]  Use sprintf_s, snprintf, or vsnprintf",
      "buffer", "", {}),
 
-    "printf|vprintf|vwprintf|vfwprintf|_vtprintf|wprintf":
+    "printf|vprintf|vwprintf|vfwprintf|_vtprintf|wprintf|fprintf|vfprintf|_ftprintf|_vftprintf|fwprintf|fvwprintf":
     (c_printf, 4,
      "If format strings can be influenced by an attacker, they can be exploited (CWE-134)",
        '--------------------------------------------------------------------------'
      "  [+]  Use a constant for the format specification",
      "format", "", {}),
-
-    "fprintf|vfprintf|_ftprintf|_vftprintf|fwprintf|fvwprintf":
-    (c_printf, 4,
-     "If format strings can be influenced by an attacker, they can be exploited (CWE-134)",
-      '--------------------------------------------------------------------------'
-     "  [+]  Use a constant for the format specification",
-     "format", "", {'format_position': 2}),
 
     # The "syslog" hook will raise "format" issues.
     "syslog":
@@ -1018,21 +1001,13 @@ c_ruleset = {
      "  [+]  Use a constant for the format specification",
      "format", "", {'format_position': 3}),
 
-    "scanf|vscanf|wscanf|_tscanf|vwscanf":
+    "scanf|vscanf|wscanf|_tscanf|vwscanf|fscanf|sscanf|vsscanf|vfscanf|_ftscanf|fwscanf|vfwscanf|vswscanf":
     (c_scanf, 4,
      "The scanf() family's %s operation, without a limit specification, "
      "permits buffer overflows (CWE-120, CWE-20)",
      '--------------------------------------------------------------------------'
      "  [+]  Specify a limit to %s, or use a different input function",
      "buffer", "", {'input': 1}),
-
-    "fscanf|sscanf|vsscanf|vfscanf|_ftscanf|fwscanf|vfwscanf|vswscanf":
-    (c_scanf, 4,
-     "The scanf() family's %s operation, without a limit specification, "
-     "permits buffer overflows (CWE-120, CWE-20)",   
-     '--------------------------------------------------------------------------'
-     "  [+]  Specify a limit to %s, or use a different input function",
-     "buffer", "", {'input': 1, 'format_position': 2}),
 
     "strlen|wcslen|_tcslen|_mbslen":
     (normal,
@@ -1115,6 +1090,7 @@ c_ruleset = {
      "try to open the file directly",
      "race",
      "avoid-race#atomic-filesystem", {}),
+    
     "chown":
     (normal, 5,
      "This accepts filename arguments; if an attacker "
@@ -1122,6 +1098,7 @@ c_ruleset = {
       '--------------------------------------------------------------------------'
      "  [+]  Use fchown( ) instead",
      "race", "", {}),
+    
     "chgrp":
     (normal, 5,
      "This accepts filename arguments; if an attacker "
@@ -1129,6 +1106,7 @@ c_ruleset = {
       '--------------------------------------------------------------------------'
      "  [+]  Use fchgrp( ) instead",
      "race", "", {}),
+    
     "chmod":
     (normal, 5,
      "This accepts filename arguments; if an attacker "
@@ -1136,6 +1114,7 @@ c_ruleset = {
       '--------------------------------------------------------------------------'
      "  [+]  Use fchmod( ) instead",
      "race", "", {}),
+    
     "vfork":
     (normal, 2,
      "On some old systems, vfork() permits race conditions, and it's "
@@ -1143,6 +1122,7 @@ c_ruleset = {
       '--------------------------------------------------------------------------'
      "  [+]  Use fork() instead",
      "race", "", {}),
+    
     "readlink":
     (normal, 5,
      "This accepts filename arguments; if an attacker "
@@ -1162,6 +1142,7 @@ c_ruleset = {
      '--------------------------------------------------------------------------'
       '  [+]  NO countermeasures,unless specified'
      "tmpfile", "", {}),
+     
     "tmpnam|tempnam":
     (normal, 3,
      "Temporary file race condition (CWE-377)",
@@ -1271,18 +1252,9 @@ c_ruleset = {
      "crypto", "", {}),
 
     # OpenSSL EVP calls to use DES.
-    "EVP_des_ecb|EVP_des_cbc|EVP_des_cfb|EVP_des_ofb|EVP_desx_cbc":
+    "EVP_des_ecb|EVP_des_cbc|EVP_des_cfb|EVP_des_ofb|EVP_desx_cbc| EVP_rc4_40|EVP_rc2_40_cbc|EVP_rc2_64_cbc":
     (normal, 4,
      "DES only supports a 56-bit keysize, which is too small given today's computers (CWE-327)",
-      '--------------------------------------------------------------------------'
-     "  [+]  Use a different patent-free encryption algorithm with a larger keysize, "
-     "such as 3DES or AES",
-     "crypto", "", {}),
-
-    # Other OpenSSL EVP calls to use small keys.
-    "EVP_rc4_40|EVP_rc2_40_cbc|EVP_rc2_64_cbc":
-    (normal, 4,
-     "These keysizes are too small given today's computers (CWE-327)",
       '--------------------------------------------------------------------------'
      "  [+]  Use a different patent-free encryption algorithm with a larger keysize, "
      "such as 3DES or AES",
